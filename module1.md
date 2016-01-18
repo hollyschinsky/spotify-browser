@@ -4,7 +4,7 @@ title: Module 1&#58; Setup the project
 ---
 
 ### Create a new Project
-1. Create a PhoneGap project using either the PhoneGap CLI or the PhoneGap Desktop Application you learned in the first workshop. For example:
+1. Create a PhoneGap project using the PhoneGap CLI with the steps you learned in the beginner's workshop. For example:
 
         phonegap create pgworkshop com.yourname.workshop PGWorkshop 
       
@@ -12,12 +12,16 @@ title: Module 1&#58; Setup the project
 
         cd pgworkshop        
 
-### Replace Contents
+### Create Project with Template
+1. The final application source for the project we'll be building in this workshop is located [here](https://github.com/hollyschinsky/spotify-browser).
+
+
+
 1. The final application project we'll be using is located [here](https://github.com/hollyschinsky/pocket-guide). It contains a **solutions** folder
 with the final module code per step to reference. If you want to work along, a starter project beginning with module 1 is available [here](https://github.com/hollyschinsky/pg-workshop). 
 Download the zip file for the [starter project](https://github.com/hollyschinsky/pg-workshop/archive/master.zip) or clone it with git:
 
-        git clone https://github.com/hollyschinsky/pg-workshop
+        git clone https://github.com/hollyschinsky/spotify-browser
 
 1. Now copy the **www**, **config.xml** and **pgbot-love.png** files from the starter project into your newly created project root and overwrite the files currently there.
 
