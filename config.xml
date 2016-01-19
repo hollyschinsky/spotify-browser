@@ -23,11 +23,10 @@
         <allow-intent href="itms-apps:*" />
     </platform>
     <preference name="DisallowOverscroll" value="true" />
+    <plugin name="cordova-plugin-whitelist" spec="~1.2.0" />
     <plugin name="cordova-plugin-statusbar" spec="~1.0.1" />
-    <plugin name="cordova-plugin-x-socialsharing" spec="https://github.com/EddyVerbruggen/SocialSharing-PhoneGap-Plugin" />
     <plugin name="cordova-plugin-media" spec="~1.0.1" />
     <plugin name="cordova-plugin-inappbrowser" spec="~1.1.1" />
     <!--<plugin name="cordova-plugin-wkwebview-engine" spec="~1.0.1" />-->
-    <plugin name="cordova-plugin-whitelist" spec="~1.2.0" />
     <plugin name="cordova-plugin-console" spec="~1.0.1" />
 </widget>
