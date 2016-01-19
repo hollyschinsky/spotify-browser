@@ -108,7 +108,7 @@
                                         <div class="item-title label">Max Results</div>
                                         <div class="item-input">
                                             <div class="range-slider">
-                                                <input id="numResults" type="range" min="0" max="50" value="20" step="1"/>
+                                                <input id="numResults" type="range" min="0" max="50" value=" 20" step="1"/>
                                             </div>
                                         </div>
                                         <div class="item-input">
@@ -133,10 +133,14 @@
         <!-- Bottom Toolbar on every view unless no-toolbar class specified -->
         <div class="toolbar">
             <div class="toolbar-inner">
-                <a href="http://www.idangero.us/framework7" class="link external">Spotify</a>
-                <a href="#" class="link"></a> <!-- placeholder -->
+                <!--<a href="http://www.idangero.us/framework7" class="link external">Spotify</a>-->
                 <a href="http://www.spotify.com" class="link external">
-                    <img src="img/spotify.png" width="32" height="32"/>
+                    <i class="icon icon-spotify"></i>
+                    <p>Spotify</p>
+                </a>
+
+                <a href="http://www.idangero.us/framework7" class="link external">
+                    <i class="icon icon-f7"></i>
                 </a>
             </div>
         </div>
@@ -149,7 +153,7 @@
     <div class="navbar">
         <div class="navbar-inner">
             <div class="left"><a href="#" class="back link"> <i class="icon icon-back"></i><span>Back</span></a></div>
-            <div class="center sliding">Item Detail</div>
+            <div class="center sliding">Media Detail</div>
             <div class="right">
                 <a href="#" class="link icon-only open-panel"> <i class="icon icon-bars"></i></a>
             </div>
@@ -158,7 +162,7 @@
 
     <div data-page="media" class="page no-toolbar">
         <div class="page-content">
-            <div class="content-block-title">Media Details</div>
+            <div class="content-block-title">Track Info</div>
             <div class="list-block">
                 <!-- item template content gets appended here -->
                 <ul>
@@ -186,7 +190,7 @@
                         </div>
                     </li>
                 </ul>
-                <div class="content-block-title">Album Details</div>
+                <div class="content-block-title">Album Info</div>
                 <div class="list-block">
                     <ul>
                         <li>
@@ -225,8 +229,8 @@
         </div>
     </div>
 </script>
-<!-- Media List Template  -->
 
+<!-- Media List Template  -->
 <script id="listTemplate" type="text/template7">
     <div class="navbar">
         <div class="navbar-inner">

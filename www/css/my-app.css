@@ -1,8 +1,15 @@
-
-i.icon.icon-plus {
+i.icon.icon-spotify {
     width: 29px;
     height: 29px;
-    background-image: url("../img/plus.svg");
+    background-image: url("../img/spotify.png");
+    margin-right: 3px;
+}
+a>p {
+    color: #fff;
+}
+/* Pad the range slider value*/
+#sliderVal {
+    padding-left: 5px;
 }
 .scroll {
     overflow: auto;
