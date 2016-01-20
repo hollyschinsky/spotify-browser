@@ -7,46 +7,29 @@ Template7.registerHelper('stringify', function (context){
 // Initialize your app
 var myApp = new Framework7({
     precompileTemplates: true,
-    template7Pages: true, // need to set this
+    template7Pages: true,
     modalTitle: "Spotify Browser"
 })
 
-// Export selectors engine (jQuery ish )
+// Export selectors engine (jQuery like)
 var $$ = Dom7;
 
-// Add views - this app uses only a main view stack
+// Add views - this app uses only one view stack
 var mainView = myApp.addView('.view-main', {
     dynamicNavbar: true,
     domCache: true
 });
 
+// Set a default range slider value
 $$('input#sliderVal').val('20');
 
-// Handle Cordova Device Ready Event
+// Handle the cordova deviceready Event
 $$(document).on('deviceready', function() {
     console.log("Device is ready!");
 });
 
 /* Media List Page Handling */
 myApp.onPageInit('list', function (page) {
-    console.log("INIT LIST");
-    $$(page.container).find('.share').on('click', function (e) {
-        e.stopPropagation();
-        var item = page.context[this.dataset.item]; //this.dataset.item returns data held in data-item attribute set in template
-
-        if (window.plugins && window.plugins.socialsharing) {
-            window.plugins.socialsharing.share("Hey! Check out this " + item.kind + " I like " + item.name + ".",
-                'Check this out', item.album.images[2].url, item.preview_url,
-                function () {
-                    console.log("Share Success")
-                },
-                function (error) {
-                    console.log("Share fail " + error)
-                });
-        }
-        else console.log("Share plugin not found");
-    });
-
     $$('.preview').on('click', function (e) {
         e.stopPropagation();
         var item = page.context[this.dataset.item]; //this.dataset.item returns data held in data-item attribute set in template
@@ -68,19 +51,6 @@ myApp.onPageInit('list', function (page) {
 myApp.onPageInit('media', function (page) {
     var item = page.context;
 
-    $$(page.container).find('.share').on('click', function (e) {
-        if (window.plugins && window.plugins.socialsharing) {
-            window.plugins.socialsharing.share("Hey! Check out this " + item.kind + " I like " + item.name + ".",
-                'Check this out', item.album.images[2].url, item.preview_url,
-                function () {
-                    console.log("Success")
-                },
-                function (error) {
-                    console.log("Share fail " + error)
-                });
-        }
-        else console.log("Share plugin not found");
-    });
     $$('#like').on('click', function (e) {
         myApp.alert("I like " + item.name);
     })
@@ -95,8 +65,8 @@ $$(document).on('input change', 'input[type="range"]', function (e) {
 })
 
 /*
-    Search Submit Button
-    - This function calls the iTunes Search API with the designated search options then makes an ajax call to load the list
+    Handle Submit Button
+    - This function calls the Spotify Web API with the designated search options then loads the list
       page when a response is received.
 */
 $$(document).on('click', '#btnSearch', function (e) {
@@ -108,7 +78,6 @@ $$(document).on('click', '#btnSearch', function (e) {
         var mediaType = "track";
         var numResults = $$("#numResults").val()
 
-        // Types to search are album, artist, playlist, track
         var url = "https://api.spotify.com/v1/search?q=" + term +"&type=" + mediaType + "&limit=" + numResults;
         $$.ajax({
             dataType: 'json',
@@ -127,7 +96,7 @@ $$(document).on('click', '#btnSearch', function (e) {
     }
 })
 
-/* Menu Handlers */
+/* Side Menu Handlers */
 $$(document).on('click', '#favorites', function (e) {
     myApp.alert('Show my favorites');
 });
