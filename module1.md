@@ -5,12 +5,19 @@ title: Module 1&#58; Setup the project
 
 ### Create a new Project
 1. Create a PhoneGap project using the PhoneGap CLI with the steps you learned in the beginner's workshop. For example:
-
-        phonegap create pgworkshop com.yourname.workshop PGWorkshop 
-      
+        phonegap create spotifyApp --template phonegap-template-framework7      
+        phonegap create pgworkshop com.yourname.workshop PGWorkshop
+        
 2. Navigate into the newly created project folder:
 
-        cd pgworkshop        
+        cd spotifyApp
+
+3. Serve the app 
+                
+        phonegap serve
+
+4. Open your browser and navigate to the ip address returned from above
+                        
 
 ### Create Project with Template
 1. The final application source for the project we'll be building in this workshop is located [here](https://github.com/hollyschinsky/spotify-browser).

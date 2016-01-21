@@ -1,59 +1,121 @@
 ---
 layout: module
-title: Module 3&#58; Best Practice - Single Page Architecture
+title: Module 3&#58; Call Spotify API & Implement Results Handling 
 ---
 
 ### Overview
-Single page applications are popular and considered the best approach for hybrid app development. In a single page application, state changes occur via JavaScript using templates and DOM manipulation rather than making calls to a server to return an HTML page. The logic stays on the client side and routing and templates are used to manipulate views when actions occur. 
- 
- >Numerous popular frameworks support this concept (Angular, Ember etc) and have it built-in to the framework. In those cases you will define your routes and templates as the framework prescribes.
-
- 
+This is a 2-part module where you will implement the submit button handling from our main view to call the Spotify API in Part 1 and then
+ create your list template to load the data into in Part 2. 
+  
+# Part 1:
+  
 ## Steps
-1. Open up the **lib/router.js** file and look through the code. This library is just a simple routing mechanism based on hash tag routing.
-             
-2. Now open **www/js/app.js** and take a look at the routes being used for this application:
- 
-       service.initialize().done(function () {
-            router.addRoute('', function() {
-                slider.slidePage(new HomeView(service).render().$el);
-            });
-       
-           router.addRoute('items/:id', function(id) {
-               service.findById(parseInt(id)).done(function(item) {
-                   slider.slidePage(new ItemView(item).render().$el);
-               });
-           });
-       
-           router.start();
-       });
 
-  When the URL is empty (no additional parameters), we show the home view with the list of items. However if we find the URL contains
-  `/items` with a given id, then we look up the id and show the `ItemView` for that item.
+1. Open my-app.js and add the following code block to handle the submit button using page level events:
 
-> [PageSlider](https://github.com/ccoenraets/PageSlider) is a simple library providing hardware accelerated page transitions for Mobile Apps
-
-3. Open **www/js/HomeView.js** and notice how you can render template content within another template, for example, the `ListView` items are populated here within the `content` tag of the home template when the `HomeView` is rendered.
-
-            this.render = function() {
-                this.$el.html(this.template());
-                $('.content', this.$el).html(listView.$el);
-                 return this;
-            };
-            
-            this.findByName = function() {
-                service.findByName($('.search-key').val()).done(function(items) {
-                    listView.setListItems(items);
-                });
-            };
+        $$(document).on('click', '#btnSearch', function (e) {
+            var term = $$("#term").val();
+            if (term.length==0) {
+                myApp.alert("Please enter a search term.");
+            }
+            else {
+                var mediaType = "track";
+                var numResults = $$("#numResults").val()
         
-            this.findAll = function() {
-                service.findAll().done(function(items) {
-                    listView.setListItems(items);
+                var url = "https://api.spotify.com/v1/search?q=" + term +"&type=" + mediaType + "&limit=" + numResults;
+                $$.ajax({
+                    dataType: 'json',
+                    url: url,
+                    success: function (resp) {
+                        console.log("Items returned: " +  resp.tracks.items);                         
+                    },
+                    error: function (xhr) {
+                        console.log("Error on ajax call " + xhr);
+                    }
                 });
-            };
+            }
+        })
+        
+> Note: you could handle this inside a page level event as well        
 
-> See [this workshop](http://hollyschinsky.github.io/phonegap-workshop/) for a better understanding of how this architecture was put together. 
+2. Run this in the browser and make sure you're getting results back in the success function.
+
+# Part 2:
+
+## Steps
+1. Open index.html and add the following template for the list view just before the `<script>` cordova.js include:
+
+    <script id="listTemplate" type="text/template7">
+        <div class="navbar">
+            <div class="navbar-inner">
+                <div class="left"><a href="#" class="back link"> <i class="icon icon-back"></i><span>Back</span></a></div>
+                <div class="center sliding">Results</div>
+                <div class="right">
+                    <a href="#" class="link icon-only open-panel"> <i class="icon icon-bars"></i></a>
+                </div>
+            </div>
+        </div>
+    
+        <!-- Search bar -->
+        <div class="page" data-page="list">
+            <form class="searchbar searchbar-init" data-search-list=".list-block-search" data-search-in=".item-title"
+                  data-searchbar-found=".searchbar-found" data-searchbar-not-found=".searchbar-not-found">
+                <div class="searchbar-input">
+                    <input type="search" placeholder="Search">
+                    <a href="#" class="searchbar-clear"></a>
+                </div>
+                <a href="#" class="searchbar-cancel">Cancel</a>
+            </form>
+            <div class="searchbar-overlay"></div>
+            <div class="page-content">
+                <!-- no result -->
+                <div class="content-block searchbar-not-found">
+                    Nothing found
+                </div>
+    
+                <div id="mediaList" class="list-block media-list list-block-search searchbar-found">
+                    <ul>
+                        {{#each this}}
+                        <li class="swipeout">
+                            <div class="swipeout-content">
+                                <a href='#' id='mediaItem{{@index}}' data-template='itemTemplate' data-context='{{stringify this}}'
+                                   class="item-content item-link">
+                                    <div class="item-media">
+                                        <img data-src="{{album.images[2].url}}" class="lazy">
+                                    </div>
+                                    <div class="item-inner">
+                                        <div class="item-title-row">
+                                            <div class="item-title">{{name}}</div>
+                                        </div>
+                                        <div class="item-subtitle">{{artists[0].name}}</div>
+                                        <div class="item-text">{{album.name}}</div>
+                                    </div>
+                                </a>
+                            </div>
+                            <div class="swipeout-actions-right">
+                                <a href="#" class="bg-orange favorite" data-item="{{@index}}"><i class="icon fa fa-star fa-2x"></i></a>
+                                <a href="#" class="bg-blue share" data-item="{{@index}}"><i class="icon fa fa-share fa-2x"></i></a>
+                            </div>
+                            <div class="swipeout-actions-left">
+                                <a href="#" class="bg-green preview" data-item="{{@index}}"><i class="icon fa fa-play fa-2x"></i></a>
+                            </div>
+                        </li>
+                        {{/each}}
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </script>
+
+2. Change the ajax `success` function to use the new template and data:
+
+        success: function (resp) {
+            myApp.template7Data = resp.tracks.items;
+             mainView.router.load({
+                template: Template7.templates.listTemplate,
+                context: myApp.template7Data
+            });
+        },
 
 <div class="row" style="margin-top:40px;">
 <div class="col-sm-12">
