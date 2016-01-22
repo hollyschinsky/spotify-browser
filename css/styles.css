@@ -19,8 +19,9 @@ blockquote {
 
 .btn-lg {
     border-radius: 2px;
-    background-color: #049EC4;
-    /*background: #2d3033;*/
+    /*background-color: #049EC4;*/
+    /*background-color: #1da74a*/
+    background: #000000;
     color: #FFFFFF !important;
     border-color: #FFFFFF;
 }
@@ -30,7 +31,7 @@ blockquote {
     padding-bottom: 30px;
     padding-top: 30px;
     /*background-color: #049EC4;*/
-    background-color: #2d3033;
+    background-color: #000;
     /*background-color: #ec0236;*/
     color: rgb(236, 236, 236);
 }
@@ -89,9 +90,9 @@ blockquote {
     /*color: #31708f;
     background-color: #d9edf7;
     border-color: #bce8f1;*/
-    color: #000000;
-    /*color: rgb(236, 236, 236);*/
-    background-color: #fff7ec;
+    /*color: #000000;*/
+    color: rgb(236, 236, 236);
+    background-color: #247f99;
     border-color: rgb(210, 209, 210);
 }
 
@@ -116,8 +117,8 @@ h2 {
     padding-left: 10px;
 }
 .screenshot {
-    max-width: 50%;
-    max-height: 50%;
+    max-width: 30%;
+    max-height: 30%;
 }
 .screenshot-lg {
     max-width: 70%;

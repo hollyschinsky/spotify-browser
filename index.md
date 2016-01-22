@@ -1,23 +1,38 @@
 ---
 layout: home
-title: PhoneGap Day Workshop
+title: PhoneGap Day 2016 Workshop
 ---
 
 ## What You Will Build
-In this workshop you will learn how to create a simple mobile Tour Guide application using PhoneGap with HTML, JavaScript and CSS. Some best
-practices and performance techniques will be taught and you will be introduced to useful plugins to add additional functionality and enhance
-the app to provide a more native experience. 
+In this workshop you will learn how to create a mobile app that interacts with the Spotify Web API using PhoneGap. Some best
+practices and performance techniques will be taught along the way and you will be introduced to useful plugins to add additional 
+functionality that will enhance the app and provide a more native experience. 
 
-<img class="screenshot" src="images/flow1.jpg"/>
-<img class="screenshot" src="images/flow2-detail-view.jpg"/>
-<img class="screenshot" src="images/flow3-map-details.jpg"/>
+<img class="screenshot" src="images/main.png"/>
+<img class="screenshot" src="images/list.png"/>
+<img class="screenshot" src="images/detail.png"/>
+<!--<img class="screenshot" src="images/menu.png"/>-->
+<img class="screenshot" src="images/swipe-play.png"/>
+<img class="screenshot" src="images/swipe-right.png"/>
+
+## Dependencies
+We will be using PhoneGap, [Framework7](http://www.idangero.us/framework7) and the [Font Awesome Icon Font library](http://fortawesome.github.io/Font-Awesome/)
+ to help us build this app. The following plugins are also used in the final version. 
+  
+      <plugin name="cordova-plugin-whitelist" spec="~1.2.0" />
+      <plugin name="cordova-plugin-statusbar" spec="~1.0.1" />
+      <plugin name="cordova-plugin-media" spec="~1.0.1" />
+      <plugin name="cordova-plugin-console" spec="~1.0.1" />
+      <plugin name="cordova-plugin-x-socialsharing" spec="~5.0.9"/>
+
 
 ## What You Will Learn
-
-- How to handle specific mobile challenges such as handling click delay, native alerts, check for offline and use a single page architecture.
-
-- How to use several PhoneGap APIs via plugins
-
+- Common mobile app development paradigms (navigation, view stacks, routing) and how to implement them.
+- How to implement templates to set up a single page architecture.
+- How to use PhoneGap plugins in your mobile apps.
+- How to interact with the Spotify REST api to retrieve data. 
+- Tips on handling specific mobile challenges to make your apps feel native and perform well. 
+- How to configure your apps (preferences, whitelisting etc). 
 
 ## Requirements
 
@@ -30,13 +45,15 @@ the app to provide a more native experience.
 SDK for that platform (iOS SDK, Android SDK, etc.) installed on your system. 
 
 ## Useful Resources
-1. [PhoneGap Workshop](http://hollyschinsky.github.io/phonegap-workshop) - a similar app with a workshop that goes step by step creating the routing, templates and views to understand Single Page Architecture. 
-2. [Conference Tracker](http://hollyschinsky.github.io/ConferenceTracker) - a conference app built with Ionic/AngularJS with some more advanced features
-3. [Google Maps API Docs](https://developers.google.com/maps/documentation/javascript/tutorial) - if you want to extend the maps functionality
+1. [Pocket Guide](http://hollyschinsky.github.io/pocket-guide) - a similar app and workshop with a vanilla approach to a single page architecture and walks through specific
+tips and tricks to make your app feel and perform natively outside of a specific UI framework doing the work for you. 
+2. [PhoneGap Workshop](http://hollyschinsky.github.io/phonegap-workshop) - a similar app with a workshop that goes step by step creating the routing, templates and views to understand Single Page Architecture. 
+3. [Conference Tracker](http://hollyschinsky.github.io/ConferenceTracker) - a conference app built with Ionic/AngularJS with some more advanced features
+
 
 ## Issues/Feedback
 
-- Please create an issue [here](https://github.com/hollyschinsky/pocket-guide/issues) if you run
+- Please create an issue [here](https://github.com/hollyschinsky/spotify-browser/issues) if you run
 into any problems or if you have feedback.
 
 - You can also use the Comments section at the bottom of each module to ask a question or report a problem.

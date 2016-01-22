@@ -1,17 +1,15 @@
 ---
 layout: module
-title: Module 3&#58; Call Spotify API & Implement Results Handling 
+title: Module 3&#58; Spotify API Call and Results Handling 
 ---
 
 ### Overview
 This is a 2-part module where you will implement the submit button handling from our main view to call the Spotify API in Part 1 and then
  create your list template to load the data into in Part 2. 
   
-# Part 1:
+### Part 1
   
-## Steps
-
-1. Open my-app.js and add the following code block to handle the submit button using page level events:
+1. Open **my-app.js** and add the following code block to handle the submit button using page level events:
 
         $$(document).on('click', '#btnSearch', function (e) {
             var term = $$("#term").val();
@@ -40,21 +38,20 @@ This is a 2-part module where you will implement the submit button handling from
 
 2. Run this in the browser and make sure you're getting results back in the success function.
 
-# Part 2:
+###Part 2
 
-## Steps
-1. Open index.html and add the following template for the list view just before the `<script>` cordova.js include:
+1. Open index.html and add the following template for the list view just before the cordova.js `<script>` include:
 
-    <script id="listTemplate" type="text/template7">
-        <div class="navbar">
-            <div class="navbar-inner">
-                <div class="left"><a href="#" class="back link"> <i class="icon icon-back"></i><span>Back</span></a></div>
-                <div class="center sliding">Results</div>
-                <div class="right">
-                    <a href="#" class="link icon-only open-panel"> <i class="icon icon-bars"></i></a>
+        <script id="listTemplate" type="text/template7">
+            <div class="navbar">
+                <div class="navbar-inner">
+                    <div class="left"><a href="#" class="back link"> <i class="icon icon-back"></i><span>Back</span></a></div>
+                    <div class="center sliding">Results</div>
+                    <div class="right">
+                        <a href="#" class="link icon-only open-panel"> <i class="icon icon-bars"></i></a>
+                    </div>
                 </div>
             </div>
-        </div>
     
         <!-- Search bar -->
         <div class="page" data-page="list">
@@ -105,7 +102,7 @@ This is a 2-part module where you will implement the submit button handling from
                 </div>
             </div>
         </div>
-    </script>
+        </script>
 
 2. Change the ajax `success` function to use the new template and data:
 

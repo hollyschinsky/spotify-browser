@@ -4,52 +4,67 @@ title: Module 1&#58; Setup the project
 ---
 
 ### Create a new Project
-1. Create a PhoneGap project using the PhoneGap CLI with the steps you learned in the beginner's workshop. For example:
-        phonegap create spotifyApp --template phonegap-template-framework7      
-        phonegap create pgworkshop com.yourname.workshop PGWorkshop
+Create a PhoneGap project using the PhoneGap CLI with the steps you learned in the beginner's workshop. In this workshop we're also
+going to use the `--template` flag and tell PhoneGap to create our project based on a simple Framework7 template now available: 
         
-2. Navigate into the newly created project folder:
+    $ phonegap create spotifyApp --template phonegap-template-framework7      
 
-        cd spotifyApp
+       
+The above command will create a basic project with a default name and id. If you would like to specificallly set the name and id, use the following
+command to create your project with your desired parameters:
+          
+    $ phonegap create spotifyApp --template phonegap-template-framework7 --name spotify-app --id com.mycompany.spotifyapp
 
-3. Serve the app 
+> You can view other template options using the `$ phonegap template list` command.
+
+### Serve the App
+First let's test out the newly created app to ensure we see the basic template before moving on. We'll use the `serve` command to start up a 
+local web server for us to try it out. 
+        
+2. Navigate into the newly created project folder
+
+        $ cd spotifyApp
+
+3. Serve the app using the PhoneGap serve command
                 
-        phonegap serve
+        $ phonegap serve
 
-4. Open your browser and navigate to the ip address returned from above
+4. Use the PhoneGap Developer app to connect to the ip address returned, or simply open it in your browser.  
                         
+5. Ensure you see the application is shown and looks like what you see below: 
 
-### Create Project with Template
-1. The final application source for the project we'll be building in this workshop is located [here](https://github.com/hollyschinsky/spotify-browser).
+   <img class="screenshot" src="images/f7-tpl.png"/>
+   <img class="screenshot" src="images/f7-tpl2.png"/>
 
+### Download/Clone Final App and Solutions
+The final application source for the project we'll be building in this workshop is located [here](https://github.com/hollyschinsky/spotify-browser).
 
+1. If you haven't done this prior to the workshop, download the zip file for the [starter project](https://github.com/hollyschinsky/spotify-browser/archive/master.zip) 
+or clone it with git:
+   
+         $ git clone https://github.com/hollyschinsky/spotify-browser
+           
+There's a **solutions** folder you can reference as needed for each module but try to go through and do each step yourself for a better learning
+experience. If you get stuck then you can simply replace the **www** and **config.xml** in your project with those in the solutions folder for the module
+ we're working on.
 
-1. The final application project we'll be using is located [here](https://github.com/hollyschinsky/pocket-guide). It contains a **solutions** folder
-with the final module code per step to reference. If you want to work along, a starter project beginning with module 1 is available [here](https://github.com/hollyschinsky/pg-workshop). 
-Download the zip file for the [starter project](https://github.com/hollyschinsky/pg-workshop/archive/master.zip) or clone it with git:
-
-        git clone https://github.com/hollyschinsky/spotify-browser
-
-1. Now copy the **www**, **config.xml** and **pgbot-love.png** files from the starter project into your newly created project root and overwrite the files currently there.
-
-  The **config.xml** file has some settings which will automatically install the project plugin dependencies, but you could optionally add them manually. The **pgbot-love.png** 
-  is the default icon for this application referenced in config.xml.
-
-  >If the network connection allows for downloading the [full project and solutions](https://github.com/hollyschinsky/pocket-guide/archive/master.zip) then you could alternatively copy over
-  the contents of **solutions/www1** into your project **www** folder, ensuring the folder name stays **www**. Then copy the config.xml and pgbot-love.png from the root
-  into your project root and replace the current config.xml.
 
 ### Run the Initial Application
-1. Serve and pair with the PhoneGap Developer App from the PhoneGap CLI or PhoneGap Desktop: 
+Now let's try out the sample app we'll be building. 
+
+1. Serve and pair with the PhoneGap Developer App from the PhoneGap CLI or PhoneGap Desktop:  
   
-   - **From PhoneGap CLI**            
-     1. Run `$ phonegap serve`
-     2. Connect to the URL reported from the `serve` command in the PhoneGap Developer app on a mobile device
- 
+   - **From PhoneGap CLI** 
+     1. Locate where you downloaded the **spotify-browser** project from my GitHub and navigate into the root from the command line          
+     2. Run `$ phonegap serve`
+     3. Connect to the URL reported from the `serve` command in the PhoneGap Developer app on a mobile device (or in a browser)
+
      
    - **From PhoneGap Desktop**
-     1. Click the play **>** button if your project is not active 
-     2. Connect to the URL reported from PhoneGap Desktop in the PhoneGap Developer app on a mobile device
+     1. Locate where you downloaded the **spotify-browser** project from my GitHub and add it to PhoneGap Desktop by clicking the **+** button
+     and selecting *Open Existing Project* to choose it. 
+     2. Click the play **>** button if your project is not active 
+     3. Connect to the URL reported from PhoneGap Desktop in the PhoneGap Developer app on a mobile device
             
    - **Advanced Option:** those with proper local setup can run on device/emulator with PhoneGap CLI with one of the following:
         
@@ -63,28 +78,13 @@ Download the zip file for the [starter project](https://github.com/hollyschinsky
        **NOTE:** If you don't have the PhoneGap Developer App, you can still run the app in your browser by opening the index.html file in the browser, you will just have limited 
        functionality.    
 
-2. Ensure you see the application load with a listing of Amsterdam's most popular locations. Try typing in a few characters to see the filtering
- on the name.    
-    
-    <img class="screenshot-lg" src="images/main-view.jpg"/>
- 
-     **Note:** You'll receive an alert about using credentials for Google Maps, see the next step. We'll be adding additional features as we go along so not everything will be functional at this point.
-  
-3. (Optional) Set up a Google Maps JavaScript API Key. This project uses the Google Maps JavaScript API for adding a map to the app. If you would like to use this feature, you'll
-need to [obtain a key](https://console.developers.google.com/) and insert it into the index.html script tag where it says your-dev-key-here. Ensure you've kept the `&libraries=geometry` parameter on the end, we'll 
-cover that later:
+    *If you see an **EADDRINUSE** error then you ar still serving another project on the same port and need to stop it.*
 
-        <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=your-dev-key-here&libraries=geometry"></script>
+Ensure you see the application is shown and looks like what you see below: 
 
-  >This is not required, you can choose to follow along by watching the demo's shown in the workshop.
+   <img class="screenshot" src="images/main.png"/>
+   <img class="screenshot" src="images/list.png"/>
  
-  To obtain a key, first create a project, choose the Google Maps JavaScript APIs from the API listing, enable it and create a browser key for it (leave referrer blank).
-  Some screenshots to guide are shown here:
-   
-   <img class="screenshot2" src="images/devkey1.jpg"/>
-   <img class="screenshot2" src="images/devkey2.jpg"/>
-   <img class="screenshot2" src="images/devkey3.jpg"/>
-   <img class="screenshot2" src="images/devkey4.jpg"/>
 
 <div class="row" style="margin-top:40px;">
 <div class="col-sm-12">
