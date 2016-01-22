@@ -38,7 +38,9 @@ Also, you can get help generating your specific header to include in the meta ta
 
         <preference name="DisallowOverscroll" value="true" />
     
-2. Storage (add this) 
+2. iOS Backup Storage (defaults to iCloud)
+ 
+        <preference name="BackupWebStorage" value="none" />
 
 
 ### Icons and Splash Screens

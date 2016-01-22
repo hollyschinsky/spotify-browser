@@ -19,13 +19,13 @@ links to tools and resources that can help you further:
 ### Push Notification Support
 Push notifications are a common requirement when developing mobile apps. See the links below for help implementing them in your PhoneGap apps.
   
--Simon's Workshop Link 
+- [Simon's Workshop Link]() 
   
 ### Plugin Development  
 There are a vast number of plugins currently available for Cordova but you still may find yourself needing a specific native feature that is not already
   supported. Learn how to write your own plugin below.
   
--Jesse's Workshop Link
+- [Jesse's Workshop Link]()
 
 ### Adding Analytics
 Analytics can be used to determine how your app is being used, which features are popular and where your pain points are.  

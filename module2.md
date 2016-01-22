@@ -25,6 +25,8 @@ Similar to a web page, this is what we're transitioning between and there are ma
 > Based on the above terminology, in our Spotify Browser App we are using one View (stack of pages) and we navigate between these pages
  by loading different templates into the main view container along with the required data to bind to that page so the expressions are
  properly evaulated. 
+ 
+    <img class="screenshot-lg" src="images/structure.png"/>
 
 ### Steps
 
