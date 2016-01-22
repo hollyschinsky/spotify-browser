@@ -33,13 +33,10 @@ Similar to a web page, this is what we're transitioning between and there are ma
 Open **index.html** and replace the code from the current `<body>` tag down to just before the cordova.js `<script>` include with:
 
     <body class="layout-dark">
-    <!-- Status bar overlay for iOS7 issue - see my-app.css for background color setting and config.xml -->
     <div class="statusbar-overlay"></div>
     
-    <!-- Panels overlay - used for side menu and any other panels to slide out from either side-->
     <div class="panel-overlay"></div>
     
-    <!-- Left panel menu with reveal effect (could also use a panel-cover effect)-->
     <div class="panel panel-left panel-reveal">
         <div class="list-block">
             <ul>
@@ -81,14 +78,10 @@ Open **index.html** and replace the code from the current `<body>` tag down to j
     
     <!-- Views-->
     <div class="views">
-        <!-- Main view-->
         <div class="view view-main">
-            <!-- Top Navigation Bar-->
             <div class="navbar" >
                 <div class="navbar-inner">
-                    <!-- Home navbar -->
                     <div class="left ">
-                        <!-- Left side navbar contains only icon -->
                         <a href="#" class="link icon-only open-panel">
                             <i class="icon icon-bars"></i>
                         </a>
@@ -99,9 +92,8 @@ Open **index.html** and replace the code from the current `<body>` tag down to j
     
             <!-- Pages - Fixed navbar and toolbar throughout all pages in this view stack-->
             <div class="pages navbar-through toolbar-through">
-                <!-- Page, data-page contains page name-->
                 <div data-page="index" class="page">
-                    <!-- Scrollable page content-->
+                    <!-- Scrollable -->
                     <div class="page-content">
                         <div class="content-block-title">Criteria</div>
                         <div class="list-block">
@@ -147,7 +139,6 @@ Open **index.html** and replace the code from the current `<body>` tag down to j
                 </div>
             </div>
     
-            <!-- Bottom Toolbar on every view unless no-toolbar class specified -->
             <div class="toolbar">
                 <div class="toolbar-inner">
                     <a href="http://www.spotify.com" class="link external">

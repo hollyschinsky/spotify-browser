@@ -52,13 +52,16 @@ If you feel like the scrolling in your app doesn't quite feel right, try adding 
  4. Use System Fonts
  
   -iOS    
-     `font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;`
+     
+     font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
  
   -Android    
-     `font-family: 'RobotoRegular', 'Droid Sans', sans-serif;`
+     
+     font-family: 'RobotoRegular', 'Droid Sans', sans-serif;
  
   -Windows Phone
-     `font-family: 'Segoe UI', Segoe, Tahoma, Geneva, sans-serif;`    
+     
+     font-family: 'Segoe UI', Segoe, Tahoma, Geneva, sans-serif;    
 
 
 >All of the tips in the above list are already built into Framework7 but worth noting and understanding.  

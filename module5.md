@@ -15,7 +15,7 @@ Let's add support for one now with some very basic event handling.
  
 1. Open index.html and locate the `view-main` section.  Add the following code:
 
-        <!-- Left panel menu with reveal effect (could also use a panel-cover effect)-->
+        <!--Reveal effect (could also use a panel-cover effect)-->
         <div class="panel panel-left panel-reveal">
             <div class="list-block">
                 <ul>
