@@ -20,44 +20,71 @@ var mainView = myApp.addView('.view-main', {
     domCache: true
 });
 
-// Set a default range slider value
-$$('input#sliderVal').val('20');
-
-// Handle the cordova deviceready Event
+// Handle the Cordova deviceready Event
 $$(document).on('deviceready', function() {
     console.log("Device is ready!");
 });
 
 /* Media List Page Handling */
 myApp.onPageInit('list', function (page) {
-    $$('.preview').on('click', function (e) {
+    $$(page.container).find('.preview').on('click', function (e) {
         e.stopPropagation();
         var item = page.context[this.dataset.item]; //this.dataset.item returns data held in data-item attribute set in template
 
         myApp.alert("Previewing " + item.name);
-        var media = new Media(item.preview_url, function () {console.log("Media Success");},function (error) {console.log("Media fail " + error)},null);
+        var media = new Media(item.preview_url, function () {console.log("Media Success");},function (error)
+            {console.log("Media fail " + error)},null);
         media.play();
         setTimeout(function() {media.stop()},7000) //preview for 7 seconds
     });
-
-    $$('.favorite').on('click', function (e) {
+    $$(page.container).find('.favorite').on('click', function (e) {
         e.stopPropagation();
         var item = page.context[this.dataset.item]; //this.dataset.item returns data held in data-item attribute set in template
-         myApp.alert(item.name + ' added to favorites!');
+        myApp.alert(item.name + ' added to favorites!');
     });
+    $$(page.container).find('.share').on('click', function (e) {
+        e.stopPropagation();
+        var item = page.context[this.dataset.item]; //this.dataset.item returns data held in data-item attribute set in template
+
+        if (window.plugins && window.plugins.socialsharing) {
+            window.plugins.socialsharing.share("Hey! My new favorite song is " + item.name + " check it out!",
+                'Check this out', item.album.images[2].url, item.preview_url,
+                function () {
+                    console.log("Share Success")
+                },
+                function (error) {
+                    console.log("Share fail " + error)
+                });
+        }
+        else console.log("Share plugin not found");
+    });
+
 });
 
 /* Media Item Page Handling */
 myApp.onPageInit('media', function (page) {
     var item = page.context;
 
-    $$('#like').on('click', function (e) {
-        myApp.alert("I like " + item.name);
-    })
+    $$(page.container).find('.favorite').on('click', function (e) {
+        myApp.alert(item.name + ' added to favorites!');
+    });
+    $$(page.container).find('.share').on('click', function (e) {
+        if (window.plugins && window.plugins.socialsharing) {
+            window.plugins.socialsharing.share("Hey! My new favorite song is " + item.name + " check it out!",
+                'Check this out', item.album.images[2].url, item.preview_url,
+                function () {
+                    console.log("Share Success")
+                },
+                function (error) {
+                    console.log("Share fail " + error)
+                });
+        }
+        else console.log("Share plugin not found");
+    });
 });
 
 /*
-    Range Slider Handling
+    Handle Range Slider
     - This function displays the value next to the slider as it slides for better visual indicator
 */
 $$(document).on('input change', 'input[type="range"]', function (e) {
@@ -79,14 +106,17 @@ $$(document).on('click', '#btnSearch', function (e) {
         var numResults = $$("#numResults").val()
 
         var url = "https://api.spotify.com/v1/search?q=" + term +"&type=" + mediaType + "&limit=" + numResults;
+        var url2  = encodeURI(url,"UTF-8");
+
         $$.ajax({
             dataType: 'json',
-            url: url,
+            url: url2,
             success: function (resp) {
-                myApp.template7Data = resp.tracks.items;
+                 //myApp.template7Data = resp.tracks.items;
                  mainView.router.load({
                     template: Template7.templates.listTemplate,
-                    context: myApp.template7Data
+                    //context: myApp.template7Data
+                     context: resp.tracks.items
                 });
             },
             error: function (xhr) {
@@ -109,7 +139,3 @@ $$(document).on('click', '#settings', function (e) {
     myApp.alert('Show Settings');
 });
 
-$$(document).on('click', '#home', function (e) {
-    mainView.router.load({url: 'index.html'}); // need to fix, causes issues on mobile only when try to re-search again
-    myApp.closePanel();
-});
