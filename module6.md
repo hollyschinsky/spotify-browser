@@ -6,67 +6,70 @@ title: Module 6&#58; Making Your App Feel Native
 ### Overview
 In this module we're going to discuss ways to make your app feel and act native. Much of the tips included here are built into Framework7 so you
 will not need to implement them in this particular app but it's important to be aware of them in general and if you decide to use a different 
-framework or do it yourself in the future. 
+framework or do it yourself in the future.
+ 
+ 
+##### *TODO: ADD ILLUSTRATIONS FOR ALL* 
 
 ## CSS Tips for a Native Feel
-1. Use System Fonts
+1. Remove tap highlight 
+    
+        -webkit-tap-highlight-color: rgba(0,0,0,0);
+        -webkit-tap-highlight-color: transparent;
+             
+1. Disable user selections on actionable elements (for instance a select on a long tap)
 
-*iOS*    
-    `font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;`
+	    -webkit-user-select: none;
+		-webkit-touch-callout: none; 
 
-*Android*    
-    `font-family: 'RobotoRegular', 'Droid Sans', sans-serif;`
+  Use the following tag for MS support:
+  		  
+        <meta name="msapplication-tap-highlight" content="no">
+		
+>Keep -webkit-user-select: text; for text input fields or you won't be able to edit your text.
 
-*Windows Phone*
-    `font-family: 'Segoe UI', Segoe, Tahoma, Geneva, sans-serif;`    
+1. Remove the glossy appearance from controls on iOS (gives flat design look)     
+     - `-webkit-appearance: none;` 
 
-2. Disable user selections on actionable elements (for instance a select on a long tap)
-
-Try it without, try it with this
-
-	        `-webkit-user-select: none;`
-		  `-webkit-touch-callout: none; `
-		  <meta name="msapplication-tap-highlight" content="no">
-		  
-		  outline: 0;
-             -webkit-tap-highlight-color: rgba(0,0,0,0);
-             -webkit-tap-highlight-color: transparent;
-             -webkit-touch-callout: none;
-             -webkit-user-select: none;
-                -moz-user-select: none;
-                 -ms-user-select: none;
-                     user-select: none;
-
-	  
-     - double tapping? touch start event? Try this
-     - `-webkit-user-select: text;` (built in F7 - see search field)
-     - `-webkit-appearance: none;` (make flat controls not glossy) (built in F7)
-
-3. Link Appearance (don't allow default links on HTML elements)     
- -Remove grey highlight around tapped links:
+2. Link Appearance (don't allow default links on HTML elements)     
+ -Remove grey highlight around tapped links with one or both of the following (depending on device and version):
 	       
-	       -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
-      	   -webkit-tap-highlight-color: transparent; 
+        -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+        -webkit-tap-highlight-color: transparent; 
      	   
-  > May or may not need both of the above      	   
+      	   
+3. Disable touch callout (default callout that displays when you hold down on a link)
  
- -Disable touch callout (default callout that displays when you hold down on a link)
-      		 
-      		 - [Touch callout disabled](http://phonegap-tips.com/articles/essential-phonegap-css-webkit-touch-callout.html) 
-        `-webkit-touch-callout: none` - use on a link to show this
+        -webkit-touch-callout: none
+        
+  See this article:[Touch callout disabled](http://phonegap-tips.com/articles/essential-phonegap-css-webkit-touch-callout.html)
 
-4. Overflow scrolling - if you feel like the scrolling in your app doesn't quite feel right, try adding the following CSS property to your container:
+3. Overflow scrolling
+If you feel like the scrolling in your app doesn't quite feel right, try adding the following CSS property to your container:
 
-        - `-webkit-overflow-scrolling: touch; `
+        -webkit-overflow-scrolling: touch; 
       
->All of the above are built into Framework7. 
+ 4. Use System Fonts
  
+  -iOS    
+     `font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;`
+ 
+  -Android    
+     `font-family: 'RobotoRegular', 'Droid Sans', sans-serif;`
+ 
+  -Windows Phone
+     `font-family: 'Segoe UI', Segoe, Tahoma, Geneva, sans-serif;`    
+
+
+>All of the tips in the above list are already built into Framework7 but worth noting and understanding.  
+
+
 ## Performance Tips
 
-TODO NEED DEMOS
+###### *TODO: DEMOS OF EACH*
 
 1. Serve properly sized images for all different resolutions
->Resolution-independent images (SVG) are a great option and scale well.
+Resolution-independent images (SVG) are a great option and scale well.
 
 2. Native Scrolling (momentum scrolling)
 Scrollable content and a fixed header and/or footer bar are common to nearly all apps. There are two common approaches to achieving this with CSS:
@@ -81,9 +84,10 @@ of your webview (making a more lightweight view), then waits for the new content
 screenshot and in the new view.
 
 4. Some other nice features Framework7 includes to help with performance:
--Lazy loading of images
--Virtual lists
--HTML Caching
+
+ -Lazy loading of images
+ -Virtual lists
+ -HTML Caching
 
 
 ## Guides 

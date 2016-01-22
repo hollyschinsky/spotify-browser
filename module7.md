@@ -6,7 +6,7 @@ title: Module 7&#58; Configuring Your App
 ### Overview
 
 ### Content Security Policy
-The Content Security Policy is defined as:
+Content Security Policy is defined as:
  
 >A mechanism web applications can use to mitigate a broad class of content injection vulnerabilities, such as cross-site scripting (XSS)
  
@@ -26,12 +26,20 @@ Also, you can get help generating your specific header to include in the meta ta
         <meta http-equiv="Content-Security-Policy" content="default-src 'self' data: gap: https://ssl.gstatic.com 'unsafe-eval';
          script-src * 'unsafe-eval'; style-src 'self'; media-src *; frame-src *;  img-src * data:; connect-src * 'unsafe-eval'">
 
+2. To enable Android devices to navigate to external URLs and retrieve data, you must add this property to the **config.xml**
+ file in addition to having the CSP above defined as well as the Cordova Whitelist plugin added. The currently block all domains so you must
+ add some kind of configuration for the type of support you require. Obviously the wildcard is not a secure and production-ready solution.
+ 
+  
+        <allow-navigation href="http://*/*" />
 
 ### General configuration settings
-1. DisallowOverscroll
-2. AndroidPersistentFileLocation ??? File Plugin related? Media includes file so this is set auto? Test
+1. Webview Bounce Effect / DisallowOverscroll
 
-** These are set in the PG F7 template **
+        <preference name="DisallowOverscroll" value="true" />
+    
+2. Storage (add this) 
+
 
 ### Icons and Splash Screens
 

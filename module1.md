@@ -80,10 +80,9 @@ Now let's try out the sample app we'll be building.
 
     *If you see an **EADDRINUSE** error then you ar still serving another project on the same port and need to stop it.*
 
-Ensure you see the application is shown and looks like what you see below: 
+2. Ensure you see the application is shown and looks like what you see below: 
 
-   <img class="screenshot" src="images/main.png"/>
-   <img class="screenshot" src="images/list.png"/>
+   <img class="screenshot-lg" src="images/main.png"/>   
  
 
 <div class="row" style="margin-top:40px;">

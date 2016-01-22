@@ -3,22 +3,32 @@ layout: module
 title: Module 2&#58; Create the App Structure 
 ---
 
-### Overview
+## Overview
 In this module you will learn how to set up your app structure, including the headers, main view, toolbars and Framework7 initialization code.
   
-## Create Views and Pages
 A quick explanation of what Views and Pages mean in context of Framework7 is worth mentioning but you should refere to the extensive docs pages
 and example apps on [the Framework7 website](http://www.idangero.us/framework7/docs) to understand further.
 
-#### Views - the wrapper container for all visual views. Only one `views` element is allowed
-#### View - a separate visual part of app with its own settings, navigation and history. Need a default view with class `view-main` since it's
-the default where pages are loaded into. 
-#### Pages - a wrapper container for pages within a single view. It is required because all page transitions happen here.
-#### Page - similar to a web page, this is what we're transitioning between and there are many pages within a single view
+### Views
+The wrapper container for all visual views. Only one `views` element is allowed
+
+### View
+A separate visual part of app with its own settings, navigation and history. You must have a default view with class `view-main` since it's
+the default where all pages are loaded into.  
+
+### Pages
+A wrapper container for pages within a single view. It is required because all page transitions happen here.
+
+### Page
+Similar to a web page, this is what we're transitioning between and there are many pages within a single view
+
+> Based on the above terminology, in our Spotify Browser App we are using one View (stack of pages) and we navigate between these pages
+ by loading different templates into the main view container along with the required data to bind to that page so the expressions are
+ properly evaulated. 
 
 ### Steps
 
-Open index.html and replace the code from the current `<body>` tag down to just before the cordova.js `<script>` include with:
+Open **index.html** and replace the code from the current `<body>` tag down to just before the cordova.js `<script>` include with:
 
     <body class="layout-dark">
     <!-- Status bar overlay for iOS7 issue - see my-app.css for background color setting and config.xml -->
@@ -152,7 +162,7 @@ Open index.html and replace the code from the current `<body>` tag down to just 
     </div>
 
 
-Open my-app.js and replace the current Framework7 initialization code with the following:
+Open **my-app.js** and replace the current Framework7 initialization code with the following:
 
         // Initialize your app
         var myApp = new Framework7({

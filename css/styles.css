@@ -87,12 +87,12 @@ blockquote {
     margin-bottom: 20px;
     border: 1px solid transparent;
     border-radius: 4px;
-    /*color: #31708f;
+    color: #31708f;
     background-color: #d9edf7;
-    border-color: #bce8f1;*/
+    /*border-color: #bce8f1;*/
     /*color: #000000;*/
-    color: rgb(236, 236, 236);
-    background-color: #247f99;
+    /*color: rgb(236, 236, 236);*/
+    /*background-color: #fff4e0;*/
     border-color: rgb(210, 209, 210);
 }
 
@@ -117,8 +117,12 @@ h2 {
     padding-left: 10px;
 }
 .screenshot {
-    max-width: 30%;
-    max-height: 30%;
+    max-width: 40%;
+    max-height: 40%;
+}
+.screenshot-md {
+    max-width: 50%;
+    max-height: 50%;
 }
 .screenshot-lg {
     max-width: 70%;

@@ -9,7 +9,7 @@ In this step we'll add some common mobile UX features to our app to make it more
 ## Side Menu
 A common mobile pattern for navigation is to use a slide-out menu (otherwise known by Google as a navigation drawer). 
 
- <img class="screenshot" src="images/menu.png"/>
+ <img class="screenshot-lg" src="images/menu-p.png"/>
 
 Let's add support for one now with some very basic event handling.
  
@@ -54,7 +54,7 @@ Let's add support for one now with some very basic event handling.
 
 Now let's add swipeout handling to our list template to allow a user to do various actions without leaving the list. 
 
-<img class="screenshot" src="images/swipe-play.png"/><img class="screenshot" src="images/swipe.png"/><img class="screenshot" src="images/swipe-right.png"/>
+<img class="screenshot-md" src="images/play-front.png"/><img class="screenshot-md" src="images/swipe-front.png"/>
 
 1. Open index.html, locate the list template definition and change this section to:
    
@@ -83,6 +83,37 @@ Now let's add swipeout handling to our list template to allow a user to do vario
                </div>
            </li>
 
+2. In the above swipeouts we have buttons that require some handlers to invoke code to actually do something when clicked. In this
+step we will add the handling for them.
+ 
+#### Favorites Handling
+The `star` button indicates that the user can add this item as a favorite. Open **my-app.js** and add the following into the list page
+ init handler:
+ 
+
+    $$(page.container).find('.favorite').on('click', function (e) {
+         e.stopPropagation();
+         var item = page.context[this.dataset.item]; //this.dataset.item returns data held in data-item attribute set in template
+         myApp.alert(item.name + ' added to favorites!');
+     });
+     
+>It will simply alert at the moment but you could extend this to add to an array of favorites and then display it in another view.     
+     
+#### Play Handling
+The left swipeout `play` button indicates the user can click it to play a preview of this item. Open **my-app.js** and add the following into 
+the list page init handler as well:
+
+    $$(page.container).find('.preview').on('click', function (e) {
+        e.stopPropagation();
+        var item = page.context[this.dataset.item]; //this.dataset.item returns data held in data-item attribute set in template
+
+        myApp.alert("Previewing " + item.name);
+        var media = new Media(item.preview_url, function () {console.log("Media Success");},function (error)
+            {console.log("Media fail " + error)},null);
+        media.play();
+        setTimeout(function() {media.stop()},7000) //preview for 7 seconds
+    });
+    
 <div class="row" style="margin-top:40px;">
 <div class="col-sm-12">
 <a href="module4.html" class="btn btn-default"><i class="glyphicon glyphicon-chevron-left"></i> Previous</a>

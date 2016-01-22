@@ -7,6 +7,8 @@ title: Module 3&#58; Spotify API Call and Results Handling
 This is a 2-part module where you will implement the submit button handling from our main view to call the Spotify API in Part 1 and then
  create your list template to load the data into in Part 2. 
   
+  <img class="screenshot-lg" src="images/list.png"/>
+  
 ### Part 1
   
 1. Open **my-app.js** and add the following code block to handle the submit button using page level events:
@@ -34,7 +36,7 @@ This is a 2-part module where you will implement the submit button handling from
             }
         })
         
-> Note: you could handle this inside a page level event as well        
+    >Note: you could handle this inside a page level event as well        
 
 2. Run this in the browser and make sure you're getting results back in the success function.
 
@@ -113,6 +115,10 @@ This is a 2-part module where you will implement the submit button handling from
                 context: myApp.template7Data
             });
         },
+
+3. Now try running the app to ensure you get back list results based on your search. Your list view should look something like the following:
+
+  <img class="screenshot-lg" src="images/list.png"/>
 
 <div class="row" style="margin-top:40px;">
 <div class="col-sm-12">
