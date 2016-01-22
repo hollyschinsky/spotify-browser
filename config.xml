@@ -17,16 +17,20 @@
     <allow-intent href="geo:*" />
     <platform name="android">
         <allow-intent href="market:*" />
+        <allow-navigation href="http://*/*" />
     </platform>
     <platform name="ios">
         <allow-intent href="itms:*" />
         <allow-intent href="itms-apps:*" />
     </platform>
     <preference name="DisallowOverscroll" value="true" />
-    <plugin name="cordova-plugin-whitelist" spec="~1.2.0" />
     <plugin name="cordova-plugin-statusbar" spec="~1.0.1" />
-    <plugin name="cordova-plugin-media" spec="~1.0.1" />
-    <plugin name="cordova-plugin-inappbrowser" spec="~1.1.1" />
-    <!--<plugin name="cordova-plugin-wkwebview-engine" spec="~1.0.1" />-->
     <plugin name="cordova-plugin-console" spec="~1.0.1" />
+    <plugin name="cordova-plugin-whitelist" spec="~1.2.1" />
+    <!-- Media Plugin automatically adds file plugin -->
+    <plugin name="cordova-plugin-media" spec="~2.1.0" />
+    <plugin name="cordova-plugin-x-socialsharing" spec="~5.0.9" />
+    <!-- See this post to see how update to the latest iOS version supporting the super fast WkWebView
+        http://devgirl.org/2016/01/11/a-faster-hybrid-app-for-the-new-year/ -->
+    <!--<plugin name="cordova-plugin-wkwebview-engine" spec="~1.0.1" />-->
 </widget>
