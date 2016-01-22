@@ -26,7 +26,7 @@ Similar to a web page, this is what we're transitioning between and there are ma
  by loading different templates into the main view container along with the required data to bind to that page so the expressions are
  properly evaulated. 
  
-    <img class="screenshot-lg" src="images/structure.png"/>
+ <img class="screenshot-lg" src="images/structure.png"/>
 
 ### Steps
 
