@@ -7,15 +7,25 @@ title: Module 5&#58; Add Menu/Side Drawer Navigation and Swipeouts
 In this step we'll add some common mobile UX features to our app to make it more useful; menus (aka side-drawer navigation) and swipeouts.  
  
 ## Side Menu
-A common mobile pattern for navigation is to use a slide-out menu (otherwise known by Google as a navigation drawer). 
 
+*** Need to add css to fix it up ***
+*** NEED TO ADD FONT-AWESOME FOR THIS!! ** 
+Icons won't show up in the detail view yet either 
+
+The decision to use a slide-out menu (also known as a [navigation drawer](https://www.google.com/design/spec/patterns/navigation-drawer.html)
+or hamburger menu) is widely debated, but it has been a common mobile pattern in the recent past. It might be best used for less commonly used
+actions where you don't want to use important screen real estate.  
+ 
  <img class="screenshot-lg" src="images/menu-p.png"/>
 
-Let's add support for one now with some very basic event handling.
+Let's look at how Framework7 supports panels to create a side panel menu with some basic event handling.
  
-1. Open index.html and locate the `view-main` section.  Add the following code:
+1. Since we started with a basic Framework7 template initially, we already have some placeholder code for a panel. Open 
+index.html and locate the `<div class="panel-overlay"></div>` section.  Currently there's a left panel already defined with a simple
+element in it that we can replace with our menu list. Modify the existing panel code to define the following content menu list:   
 
-        <!--Reveal effect (could also use a panel-cover effect)-->
+        <div class="panel-overlay"></div>
+        <!-- Left panel with reveal effect-->
         <div class="panel panel-left panel-reveal">
             <div class="list-block">
                 <ul>
@@ -47,14 +57,33 @@ Let's add support for one now with some very basic event handling.
             </div>
         </div>
 
+  >Notice the panel has a `reveal` effect. You could change it to `panel-cover` to try out that effect instead.
+   
 
+2. Now we need to add handling for each of these menu list items. Each of them has an id we can use to add a click event to. 
+Open my-app.js and add the following basic click handlers to the end of the file for each of the id's:
  
+    
+        $$(document).on('click', '#favorites', function (e) {
+            myApp.alert('Show my favorites');
+        });
+        
+        $$(document).on('click', '#about', function (e) {
+            myApp.alert('Show About');
+        });
+        
+        $$(document).on('click', '#settings', function (e) {
+            myApp.alert('Show Settings');
+        });
+
+3. **Extra credit:** Add a template to handle the About page that is loaded when the menu item is clicked. 
+(Use the [Framework7 docs](http://www.idangero.us/framework7/docs) as a reference). 
 
 ## Swipeouts
 
 Now let's add swipeout handling to our list template to allow a user to do various actions without leaving the list. 
 
-<img class="screenshot-md" src="images/play-front.png"/><img class="screenshot-md" src="images/swipe-front.png"/>
+    <img class="screenshot-md" src="images/play-front.png"/><img class="screenshot-md" src="images/swipe-front.png"/>
 
 1. Open index.html, locate the list template definition and change this section to:
    
@@ -85,6 +114,8 @@ Now let's add swipeout handling to our list template to allow a user to do vario
 
 2. In the above swipeouts we have buttons that require some handlers to invoke code to actually do something when clicked. In this
 step we will add the handling for them.
+
+    {{@index}} - number of current item in list 
  
 #### Favorites Handling
 The `star` button indicates that the user can add this item as a favorite. Open **my-app.js** and add the following into the list page
@@ -99,7 +130,7 @@ The `star` button indicates that the user can add this item as a favorite. Open 
      
 >It will simply alert at the moment but you could extend this to add to an array of favorites and then display it in another view.     
      
-#### Play Handling
+#### Preview Handling
 The left swipeout `play` button indicates the user can click it to play a preview of this item. Open **my-app.js** and add the following into 
 the list page init handler as well:
 
@@ -113,6 +144,12 @@ the list page init handler as well:
         media.play();
         setTimeout(function() {media.stop()},7000) //preview for 7 seconds
     });
+    
+    ### Dependencies
+    - [Media Plugin](https://github.com/apache/cordova-plugin-media)
+           
+            $ phonegap plugin add cordova-plugin-media
+
     
 <div class="row" style="margin-top:40px;">
 <div class="col-sm-12">

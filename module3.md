@@ -22,12 +22,13 @@ This is a 2-part module where you will implement the submit button handling from
                 var mediaType = "track";
                 var numResults = $$("#numResults").val()
         
-                var url = "https://api.spotify.com/v1/search?q=" + term +"&type=" + mediaType + "&limit=" + numResults;
+                var url = "https://api.spotify.com/v1/search?q=" + term +"&type=" + mediaType + "&limit=" + numResults;                
+        
                 $$.ajax({
                     dataType: 'json',
                     url: url,
                     success: function (resp) {
-                        console.log("Items returned: " +  resp.tracks.items);                         
+                        myApp.alert(("Number of results " + resp.tracks.items.length);
                     },
                     error: function (xhr) {
                         console.log("Error on ajax call " + xhr);
@@ -35,14 +36,31 @@ This is a 2-part module where you will implement the submit button handling from
                 });
             }
         })
-        
-    >Note: you could handle this inside a page level event as well        
 
-2. Run this in the browser and make sure you're getting results back in the success function.
+2. If you try to run the app in the browser you will get some errors related to violating the Content Security Policy. You'll need to edit
+ the default one currently in place in the index.html to give more access. **Content Security Policy** is defined as:
+  
+ >A mechanism web applications can use to mitigate a broad class of content injection vulnerabilities, such as cross-site scripting (XSS)
+  
+ Essentially it allows you to define where your app is allowed to load content from. You need to customize it for your own apps based on your
+ needs. You also must ensure the `cordova-plugin-whitelist` has been added to your project. (Note that it was part of the base template we used
+ and was already included for us in this case). To learn more about how to customize it specifically, check out the [Cordova Whitelist Guide](http://cordova.apache.org/docs/en/latest/guide/appdev/whitelist/index.html)
+  and [Cordova Whitelist Plugin](https://github.com/apache/cordova-plugin-whitelist/blob/master/README.md#content-security-policy).  
+ Also, you can get help generating your specific header to include in the meta tag more easily using this [website](http://cspisawesome.com/). 
+ 
+ Open the index.html file and replace the current policy with this one:
+     
+         <meta http-equiv="Content-Security-Policy" content="default-src 'self' data: gap: https://ssl.gstatic.com 'unsafe-eval';
+              script-src * 'unsafe-eval'; style-src 'self'; media-src *; frame-src *;  img-src * data:; connect-src * 'unsafe-eval'">
+
+        
+ >Run the app in the browser and make sure you see an alert with a number of results returned. Use the Chrome Developer tools to
+ inspect or check the console if you do not see it. 
+
 
 ###Part 2
 
-1. Open index.html and add the following template for the list view just before the cordova.js `<script>` include:
+1. Add the following template definition to represent our list view in index.html just before the `<script>` include for cordova.js:
 
         <script id="listTemplate" type="text/template7">
             <div class="navbar">
@@ -76,8 +94,7 @@ This is a 2-part module where you will implement the submit button handling from
                             {{#each this}}
                             <li class="swipeout">
                                 <div class="swipeout-content">
-                                    <a href='#' id='mediaItem{{@index}}' data-template='itemTemplate' data-context='{{stringify this}}'
-                                       class="item-content item-link">
+                                    <a href='#' class="item-content item-link">                                    
                                         <div class="item-media">
                                             <img data-src="{{album.images[2].url}}" class="lazy">
                                         </div>
@@ -105,19 +122,33 @@ This is a 2-part module where you will implement the submit button handling from
             </div>
            </script>
 
-2. Change the ajax `success` function to use the new template and data:
+>Templates are loaded into the DOM when the app initializes and bound to with data at request time. The differences between the different ways
+you can load pages using Framework7 is worth reviewing [here](http://www.idangero.us/framework7/docs/pages-ajax.html#.Vqbv91MrKjQ). 
 
-        success: function (resp) {
-            myApp.template7Data = resp.tracks.items;
-             mainView.router.load({
-                template: Template7.templates.listTemplate,
-                context: myApp.template7Data
-            });
-        },
+2. Open my-app.js again and modify the Submit button handler's `success` function to remove the alert and instead use the built-in F7 router to 
+load this new template. We'll also set the data context to the results of our Spotify call and the expressions in the template will be bound to
+the data.
 
-3. Now try running the app to ensure you get back list results based on your search. Your list view should look something like the following:
+        $$.ajax({
+            dataType: 'json',
+            url: url,
+            success: function (resp) {
+                 mainView.router.load({
+                     template: Template7.templates.listTemplate,
+                     context: resp.tracks.items
+                });
+            },
+            error: function (xhr) {
+                console.log("Error on ajax call " + xhr);
+            }
+        });
+        
+3. Now try running your app again and check to make sure you see the new list page returned with the results after you submit. Your list page 
+should look something like the following:
 
   <img class="screenshot-lg" src="images/list.png"/>
+
+4. Feel free to delete the about.html page in your root **www** folder. It was part of the template but will not be used in this app. 
 
 <div class="row" style="margin-top:40px;">
 <div class="col-sm-12">

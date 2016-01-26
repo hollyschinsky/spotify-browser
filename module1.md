@@ -1,6 +1,6 @@
 ---
 layout: module
-title: Module 1&#58; Setup the project
+title: Module 1&#58; Set up the project
 ---
 
 ### Create a new Project
@@ -36,6 +36,8 @@ local web server for us to try it out.
    <img class="screenshot" src="images/f7-tpl.png"/>
    <img class="screenshot" src="images/f7-tpl2.png"/>
 
+>Use the Chrome Developer tools at any time during this workshop to help debug any issues. Open it with Alt+Cmd+I or via the View->Developer menu. 
+
 ### Download/Clone Final App and Solutions
 The final application source for the project we'll be building in this workshop is located [here](https://github.com/hollyschinsky/spotify-browser).
 
@@ -48,9 +50,35 @@ There's a **solutions** folder you can reference as needed for each module but t
 experience. If you get stuck then you can simply replace the **www** and **config.xml** in your project with those in the solutions folder for the module
  we're working on.
 
+### Add Font Awesome Icon Library
 
-### Run the Initial Application
-Now let's try out the sample app we'll be building. 
+Framework7 comes pre-defined with some basic icons but will support other icon libraries like [Font Awesome](http://fortawesome.github.io/Font-Awesome/ 
+and [Ionicons](http://ionicons.com/).
+
+1. Locate the final project you downloaded and copy the `lib/font-awesome` folder into your `www/lib` folder.
+   
+2. Open index.html and add the reference to include the stylesheet link just before the styles.css stylesheet in the HTML header.   
+      
+        <link rel="stylesheet" href="lib/font-awesome/css/font-awesome.min.css">
+        
+3. To use Framework7 icons, specify the `icon` class first followed by the name of the icon definition (from the Framework7 CSS defintion):
+        
+        <!-- Using Framework7 Icons -->
+        <i class="icon icon-bars"></i>
+
+To use the Font Awesome icons, specify the `icon` and `fa` class followed by the name of the icon you want to use. Find all the icons available
+[here](http://fortawesome.github.io/Font-Awesome/icons/). 
+        
+        <!-- Using Font Awesome Icons-->
+        <i class="icon fa fa-star"></i> 
+
+
+### Setup Trouble?        
+If you have any problems with setting up your project based on the above, remember you can simply copy over the files located in the **solutions** 
+module1 starter folder into your project's root (overwrite them) and start from there. 
+
+### Bonus Step: Run the Final Application
+Feel free to try out the sample app we'll be building yourself.  
 
 1. Serve and pair with the PhoneGap Developer App from the PhoneGap CLI or PhoneGap Desktop:  
   
@@ -73,7 +101,7 @@ Now let's try out the sample app we'll be building.
             $ phonegap run android             
             $ phonegap run android --device               
       
-      > This option requires a mobile SDK setup. If you have Mac and Xcode you should be able to use iOS, but Android requires [additional SDK installation and setup](http://developer.android.com/sdk). 
+      >This option requires a mobile SDK setup. If you have Mac and Xcode you should be able to use iOS, but Android requires [additional SDK installation and setup](http://developer.android.com/sdk). 
 
        **NOTE:** If you don't have the PhoneGap Developer App, you can still run the app in your browser by opening the index.html file in the browser, you will just have limited 
        functionality.    

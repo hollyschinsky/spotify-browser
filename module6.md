@@ -16,13 +16,25 @@ framework or do it yourself in the future.
     
         -webkit-tap-highlight-color: rgba(0,0,0,0);
         -webkit-tap-highlight-color: transparent;
+
+### Optional
+If you're running an app through the CLI on a native simulator or device (outside of PhoneGap Developer), you can test this out with Safari 
+developer tools. Open up to inspect and modify some of the CSS properties applied from the Framework7 CSS.
+ 
+- Change tap highligh to a color instead of transparent, such as `-webkit-tap-highlight-color: green;`. Then try clicking on one of the external links at the bottom of the main screen.
+- Comment out `-webkit-touch-callout: none;` or change it to another value. Then hold down (long tap) on a link.
+- Comment out `-webkit-appearance: none;` 
+- While in the list view of the app, comment out the `-webkit-overflow-scrolling: touch;` property in the `.page-content` definition and notice the
+ impact on the scrolling feel. 
+- Try holding down on one of the titles, like the word Songs on the main view. You will see it get selected and a menu shown to copy etc. Deselect it, 
+then add `-webkit-user-select: none; to the `.body` definition in the CSS and try it again to see what happens.
              
 1. Disable user selections on actionable elements (for instance a select on a long tap)
 
 	    -webkit-user-select: none;
 		-webkit-touch-callout: none; 
 
-  Use the following tag for MS support:
+  Use the following tag in your index.html for MS support:
   		  
         <meta name="msapplication-tap-highlight" content="no">
 		
@@ -30,6 +42,9 @@ framework or do it yourself in the future.
 
 1. Remove the glossy appearance from controls on iOS (gives flat design look)     
      - `-webkit-appearance: none;` 
+     
+     TODO - screenshot
+     
 
 2. Link Appearance (don't allow default links on HTML elements)     
  -Remove grey highlight around tapped links with one or both of the following (depending on device and version):
@@ -44,10 +59,12 @@ framework or do it yourself in the future.
         
   See this article:[Touch callout disabled](http://phonegap-tips.com/articles/essential-phonegap-css-webkit-touch-callout.html)
 
-3. Overflow scrolling
-If you feel like the scrolling in your app doesn't quite feel right, try adding the following CSS property to your container:
+3. Use Native Scrolling - if the UI framework you're using doesn't have this set on the classes you're using for your containers you should
+ set it. 
 
         -webkit-overflow-scrolling: touch; 
+        
+> On Android 4+ every scrollable container has momentum scrolling.
       
  4. Use System Fonts
  
@@ -73,14 +90,25 @@ If you feel like the scrolling in your app doesn't quite feel right, try adding 
 
 1. Serve properly sized images for all different resolutions
 Resolution-independent images (SVG) are a great option and scale well.
-
-2. Native Scrolling (momentum scrolling)
-Scrollable content and a fixed header and/or footer bar are common to nearly all apps. There are two common approaches to achieving this with CSS:
-    - Disabling scrolling on the body, and applying `overflow: scroll` to the content enables momentum scrolling
     
-> On Android 4+ every scrollable container has momentum scrolling.
+2. Hardware Accelerated Transitions
 
-3. Hardware Accelerated Transitions
+.page-on-left {
+    opacity: .9;
+    -webkit-transform: translate3d(-20%, 0, 0);
+    transform: translate3d(-20%, 0, 0)
+}
+
+.page-on-center .swipeback-page-shadow {
+    opacity: 1
+}
+
+.page-on-right {
+    -webkit-transform: translate3d(100%, 0, 0);
+    transform: translate3d(100%, 0, 0)
+}
+
+
 
 >The [Native Transitions Plugin](http://plugins.telerik.com/cordova/plugin/native-page-transitions) is a Cordova plugin to help increase the speed of your transitions.  The plugin immediately grabs a screenshot 
 of your webview (making a more lightweight view), then waits for the new content to load, and then performs the transition by animating out the 
