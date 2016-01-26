@@ -97,7 +97,7 @@ myApp.onPageInit('list', function (page) {
 
 });
 
-/* Media Item Page Handling */
+// Media Item Page Handling
 myApp.onPageInit('media', function (page) {
     var item = page.context;
 
@@ -120,7 +120,7 @@ myApp.onPageInit('media', function (page) {
 });
 
 
-/* Side Menu Handlers */
+// Side Menu Handlers
 $$(document).on('click', '#favorites', function (e) {
     myApp.alert('Show my favorites');
 });
