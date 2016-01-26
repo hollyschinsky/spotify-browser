@@ -60,6 +60,7 @@ $$(document).on('click', '#btnSearch', function (e) {
         });
     }
 });
+
 // Media List Page Handling
 myApp.onPageInit('list', function (page) {
     $$(page.container).find('.favorite').on('click', function (e) {
@@ -77,8 +78,45 @@ myApp.onPageInit('list', function (page) {
         media.play();
         setTimeout(function() {media.stop()},7000); //preview for 7 seconds
     });
+
+    $$(page.container).find('.share').on('click', function (e) {
+        var item = page.context[this.dataset.item];
+
+        if (window.plugins && window.plugins.socialsharing) {
+            window.plugins.socialsharing.share("Hey! My new favorite song is " + item.name + " check it out!",
+                'Check this out', item.album.images[2].url, item.preview_url,
+                function () {
+                    console.log("Share Success")
+                },
+                function (error) {
+                    console.log("Share fail " + error)
+                });
+        }
+        else myApp.alert("Share plugin not found");
+    });
 });
 
+// Media Item Page Handling
+myApp.onPageInit('media', function (page) {
+    var item = page.context;
+
+    $$(page.container).find('.share').on('click', function (e) {
+        if (window.plugins && window.plugins.socialsharing) {
+            window.plugins.socialsharing.share("Hey! My new favorite song is " + item.name + " check it out!",
+                'Check this out', item.album.images[2].url, item.preview_url,
+                function () {
+                    console.log("Share Success")
+                },
+                function (error) {
+                    console.log("Share fail " + error)
+                });
+        }
+        else myApp.alert("Share plugin not found");
+    });
+    $$(page.container).find('.favorite').on('click', function (e) {
+        myApp.alert(item.name + ' added to favorites!');
+    });
+});
 
 // Side Menu Handlers
 $$(document).on('click', '#favorites', function (e) {
@@ -92,4 +130,3 @@ $$(document).on('click', '#about', function (e) {
 $$(document).on('click', '#settings', function (e) {
     myApp.alert('Show Settings');
 });
-

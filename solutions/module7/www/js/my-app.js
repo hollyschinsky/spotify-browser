@@ -62,9 +62,13 @@ $$(document).on('click', '#btnSearch', function (e) {
 });
 // Media List Page Handling
 myApp.onPageInit('list', function (page) {
+    $$(page.container).find('.favorite').on('click', function (e) {
+        // this.dataset.item returns current index of item clicked so we can retrieve from context
+        var item = page.context[this.dataset.item];
+        myApp.alert(item.name + ' added to favorites!');
+    });
+
     $$(page.container).find('.preview').on('click', function (e) {
-        e.stopPropagation();
-        // this.dataset.item returns data held in data-item attribute set in template
         var item = page.context[this.dataset.item];
 
         myApp.alert("Previewing " + item.name);
@@ -72,27 +76,6 @@ myApp.onPageInit('list', function (page) {
         {console.log("Media fail " + error)},null);
         media.play();
         setTimeout(function() {media.stop()},7000); //preview for 7 seconds
-    });
-    $$(page.container).find('.favorite').on('click', function (e) {
-        e.stopPropagation();
-        var item = page.context[this.dataset.item];
-        myApp.alert(item.name + ' added to favorites!');
-    });
-    $$(page.container).find('.share').on('click', function (e) {
-        e.stopPropagation();
-        var item = page.context[this.dataset.item];
-
-        if (window.plugins && window.plugins.socialsharing) {
-            window.plugins.socialsharing.share("Hey! My new favorite song is " + item.name + " check it out!",
-                'Check this out', item.album.images[2].url, item.preview_url,
-                function () {
-                    console.log("Share Success")
-                },
-                function (error) {
-                    console.log("Share fail " + error)
-                });
-        }
-        else console.log("Share plugin not found");
     });
 });
 
