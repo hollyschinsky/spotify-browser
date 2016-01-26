@@ -60,27 +60,26 @@ $$(document).on('click', '#btnSearch', function (e) {
     }
 });
 
-/* Media List Page Handling */
+// Media List Page Handling
 myApp.onPageInit('list', function (page) {
+    $$(page.container).find('.favorite').on('click', function (e) {
+        // this.dataset.item returns current index of item clicked so we can retrieve from context
+        var item = page.context[this.dataset.item];
+        myApp.alert(item.name + ' added to favorites!');
+    });
+
     $$(page.container).find('.preview').on('click', function (e) {
-        e.stopPropagation();
-        // this.dataset.item returns data held in data-item attribute set in template
-        var item = page.context[this.dataset.item]; 
+        var item = page.context[this.dataset.item];
 
         myApp.alert("Previewing " + item.name);
         var media = new Media(item.preview_url, function () {console.log("Media Success");},function (error)
-            {console.log("Media fail " + error)},null);
+        {console.log("Media fail " + error)},null);
         media.play();
         setTimeout(function() {media.stop()},7000); //preview for 7 seconds
     });
-    $$(page.container).find('.favorite').on('click', function (e) {
-        e.stopPropagation();
-        var item = page.context[this.dataset.item]; 
-        myApp.alert(item.name + ' added to favorites!');
-    });
+
     $$(page.container).find('.share').on('click', function (e) {
-        e.stopPropagation();
-        var item = page.context[this.dataset.item]; 
+        var item = page.context[this.dataset.item];
 
         if (window.plugins && window.plugins.socialsharing) {
             window.plugins.socialsharing.share("Hey! My new favorite song is " + item.name + " check it out!",
@@ -92,18 +91,14 @@ myApp.onPageInit('list', function (page) {
                     console.log("Share fail " + error)
                 });
         }
-        else console.log("Share plugin not found");
+        else myApp.alert("Share plugin not found");
     });
-
 });
 
 // Media Item Page Handling
 myApp.onPageInit('media', function (page) {
     var item = page.context;
 
-    $$(page.container).find('.favorite').on('click', function (e) {
-        myApp.alert(item.name + ' added to favorites!');
-    });
     $$(page.container).find('.share').on('click', function (e) {
         if (window.plugins && window.plugins.socialsharing) {
             window.plugins.socialsharing.share("Hey! My new favorite song is " + item.name + " check it out!",
@@ -115,7 +110,10 @@ myApp.onPageInit('media', function (page) {
                     console.log("Share fail " + error)
                 });
         }
-        else console.log("Share plugin not found");
+        else myApp.alert("Share plugin not found");
+    });
+    $$(page.container).find('.favorite').on('click', function (e) {
+        myApp.alert(item.name + ' added to favorites!');
     });
 });
 
