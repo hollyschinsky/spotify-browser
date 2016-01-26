@@ -34,7 +34,7 @@ then add `-webkit-user-select: none; to the `.body` definition in the CSS and tr
 	    -webkit-user-select: none;
 		-webkit-touch-callout: none; 
 
-  Use the following tag in your index.html for MS support:
+  Use the following tag in your index.html for Microsoft platform support:
   		  
         <meta name="msapplication-tap-highlight" content="no">
 		
