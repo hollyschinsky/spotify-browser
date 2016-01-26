@@ -19,7 +19,7 @@
 
     <!-- Font-awesome icon library -->
     <link rel="stylesheet" href="lib/font-awesome/css/font-awesome.min.css">
-    <link rel="stylesheet" href="css/my-app.css">
+    <link rel="stylesheet" href="css/styles.css">
 </head>
 
 <body class="layout-dark">
@@ -41,7 +41,7 @@
                         </div>
                     </div>
                 </li>
-                <li id="favorites" >
+                <li id="favorites">
                     <div class="item-content">
                         <div class="item-media"><i class="icon fa fa-star"></i></div>
                         <div class="item-inner">
@@ -181,7 +181,7 @@
                         {{#each this}}
                         <li class="swipeout">
                             <div class="swipeout-content">
-                                <a href='#' id='mediaItem{{@index}}' data-template='itemTemplate' data-context='{{stringify this}}'
+                                <a href='#' data-template='itemTemplate' data-context='{{stringify this}}'
                                    class="item-content item-link">
                                     <div class="item-media">
                                         <img data-src="{{album.images[2].url}}" class="lazy">

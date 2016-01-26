@@ -29,6 +29,7 @@ i.icon.icon-spotify {
     text-overflow: ellipsis;
     max-width: 100%;
 }
+/* Formats the Popularity Rank title to display slider better */
 .list-block .item-title.label {
     width: 50%;
 
