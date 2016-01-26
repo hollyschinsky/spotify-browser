@@ -148,7 +148,8 @@ should look something like the following:
 
   <img class="screenshot-lg" src="images/list.png"/>
 
-4. Feel free to delete the about.html page in your root **www** folder. It was part of the template but will not be used in this app. 
+4. Go ahead and delete the about.html page in your root **www** folder to avoid future confusion. It was part of the original F7 template 
+project we created from but will not be used in the final app. 
 
 <div class="row" style="margin-top:40px;">
 <div class="col-sm-12">
