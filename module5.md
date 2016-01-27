@@ -152,14 +152,14 @@ the list page init handler as well:
     });
         
 ##### Dependencies
-    The preview feature above requires the Media Plugin. If you're testing with the PhoneGap Developer app on your mobile device, then it's already 
-    configured for you in the sandboxed environment. If you are running locally with the CLI however, be sure to add the plugin. 
+  The preview feature above requires the Media Plugin. If you're testing with the PhoneGap Developer app on your mobile device, then it's already 
+  configured for you in the sandboxed environment. If you are running locally with the CLI however, be sure to add the plugin. 
     
-    - [Media Plugin](https://github.com/apache/cordova-plugin-media)
+   - [Media Plugin](https://github.com/apache/cordova-plugin-media)
            
             $ phonegap plugin add cordova-plugin-media --save
 
-    **Note:** This command will also add the Cordova File Plugin by default since it's a required dependency. 
+  **Note:** This command will also add the Cordova File Plugin by default since it's a required dependency. 
     
 6. You may notice there's also a `Share` swipeout button but we will be handling that in a later module since it requires a 3rd party plugin. 
     

@@ -2,13 +2,23 @@
 layout: module
 title: Module 1&#58; Set up the project
 ---
+### Download/Clone Final App and Solutions
+The final application source for the project we'll be building in this workshop is located [here](https://github.com/hollyschinsky/spotify-browser).
+
+If you haven't done this prior to the workshop, download the zip file for the [starter project](https://github.com/hollyschinsky/spotify-browser/archive/master.zip) 
+or clone it with git:
+   
+         $ git clone https://github.com/hollyschinsky/spotify-browser
+           
+There's a **[solutions](https://github.com/hollyschinsky/spotify-browser/tree/master/solutions)** folder you can use as a reference for each
+ module but try to go through and do each step yourself for a better learning experience. If you get stuck then you can simply replace your root project's **www** and **config.xml** with those in the solutions folder from the module
+ we're working on.
 
 ### Create a new Project
 Create a PhoneGap project using the PhoneGap CLI with the steps you learned in the beginner's workshop. In this workshop we're also
 going to use the `--template` flag and tell PhoneGap to create our project based on a simple Framework7 template now available: 
         
     $ phonegap create spotifyApp --template phonegap-template-framework7      
-
        
 The above command will create a basic project with a default name and id. If you would like to specificallly set the name and id, use the following
 command to create your project with your desired parameters:
@@ -38,24 +48,13 @@ local web server for us to try it out.
 
 >Use the Chrome Developer tools at any time during this workshop to help debug any issues. Open it with Alt+Cmd+I or via the View->Developer menu. 
 
-### Download/Clone Final App and Solutions
-The final application source for the project we'll be building in this workshop is located [here](https://github.com/hollyschinsky/spotify-browser).
-
-1. If you haven't done this prior to the workshop, download the zip file for the [starter project](https://github.com/hollyschinsky/spotify-browser/archive/master.zip) 
-or clone it with git:
-   
-         $ git clone https://github.com/hollyschinsky/spotify-browser
-           
-There's a **solutions** folder you can reference as needed for each module but try to go through and do each step yourself for a better learning
-experience. If you get stuck then you can simply replace the **www** and **config.xml** in your project with those in the solutions folder for the module
- we're working on.
 
 ### Add Font Awesome Icon Library
 
 Framework7 comes pre-defined with some basic icons but will support other icon libraries like [Font Awesome](http://fortawesome.github.io/Font-Awesome/ 
 and [Ionicons](http://ionicons.com/).
 
-1. Locate the final project you downloaded and copy the `lib/font-awesome` folder into your `www/lib` folder.
+1. Locate the final project you downloaded and copy the `www/lib/font-awesome` folder into your `www/lib` folder.
    
 2. Open index.html and add the reference to include the stylesheet link just before the styles.css stylesheet in the HTML header.   
       
@@ -110,7 +109,7 @@ Feel free to try out the sample app we'll be building yourself.
 
 2. Ensure you see the application is shown and looks like what you see below: 
 
-   <img class="screenshot-lg" src="images/main.png"/>   
+   <img class="screenshot-full" src="images/main.png"/>   
  
 
 <div class="row" style="margin-top:40px;">

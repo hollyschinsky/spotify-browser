@@ -5,24 +5,23 @@ title: Module 2&#58; Create the App Structure
 
 ## Overview
 In this module you will learn how to set up your app structure, including the headers, main view, toolbars and Framework7 initialization code.
-  
-A quick explanation of what Views and Pages mean in context of Framework7 is worth mentioning but you should refere to the extensive docs pages
-and example apps on [the Framework7 website](http://www.idangero.us/framework7/docs) to understand further.
+Check out [the Framework7 website](http://www.idangero.us/framework7/docs) docs and examples apps for more details.
 
-### Views
+### Framework7 Views and Pages
+1. **Views**
 The wrapper container for all visual views. Only one `views` element is allowed
 
-### View
+2. **View**
 A separate visual part of app with its own settings, navigation and history. You must have a default view with class `view-main` since it's
 the default where all pages are loaded into.  
 
-### Pages
-A wrapper container for pages within a single view. It is required because all page transitions happen here.
+3. **Pages**
+A wrapper container for pages within a single view.
 
-### Page
+4. **Page**
 Similar to a web page, this is what we're transitioning between. There can be many pages within a single view.
 
-> Based on the above terminology, in our Spotify Browser App we are using one View (stack of pages) and we navigate between these pages
+>Based on the above terminology, in our Spotify Browser App we are using one View (stack of pages) and we navigate between these pages
  by loading different templates into the main view container along with the required data to bind to that page so the expressions are
  properly evaulated. 
  
@@ -37,7 +36,7 @@ Similar to a web page, this is what we're transitioning between. There can be ma
   > Refresh the app or open it if it's running in your browser and check to see the change to the look of the app. 
 
 2. Next, we'll define our main views and page. The main page will have a few form controls on it to help allow the user to enter search 
-criteria. Replace the block of code starting under the `<!--Views-->` command and ending just before the cordova.js `<script>` include with:
+criteria. Replace the block of code starting under the `<!--Views-->` comment and ending just before the cordova.js `<script>` include with:
     
         <div class="views">
             <!-- Main view-->
@@ -127,9 +126,9 @@ criteria. Replace the block of code starting under the `<!--Views-->` command an
 unless it's added. 
 
         
-- Copy the spotify.png file from the **www/img** folder in the final project or solutions and add it into the **www/img** folder of your working 
+  - Copy the `spotify.png` file from the `www/img` folder in the final project and add it into the `www/img` folder of your working 
 project.
-- Now open your styles.css file in the **www/css** folder and add the style definition for it.
+  - Now open your `styles.css` file in the `www/css` folder and add the style definition for it.
  
         i.icon.icon-spotify {
              width: 29px;
@@ -142,7 +141,7 @@ project.
 >Refresh your browser to see the new page. Notice the controls don't actually do anything yet and if you try to drag the slider left/right it 
 will not update the value. 
 
-3. Now set up the Framework7 initialization code by opening up **js/my-app.js** and replacing the current Framework7 
+3. Now set up the Framework7 initialization code by opening up `www/js/my-app.js` and replacing the current Framework7 
 initialization code and `mainView` setup with the following code block, ending just before the `deviceready` event handler.
 
         var myApp = new Framework7({
@@ -160,7 +159,7 @@ initialization code and `mainView` setup with the following code block, ending j
 
 >The *modalTitle* is the default string to use for all alerts and modals in the application. 
         
-4. Next, while still in **my-app.js**, add the following change handler to update the slider text value. You can add the function just
+4. Next, while still in `my-app.js`, add the following change handler to update the slider text value. You can add the function just
  before the `deviceready` event handler. 
         
         $$(document).on('input change', 'input[type="range"]', function (e) {
@@ -169,7 +168,7 @@ initialization code and `mainView` setup with the following code block, ending j
 
 >Test to ensure the slider now updates the value before moving on to the next step.  
 
-5. Go ahead and remove the rest of the code in my-app.js after the `deviceready` handler since we will not be using anything with the about.html
+5. Go ahead and remove the rest of the code in `my-app.js` after the `deviceready` handler since we will not be using anything with the about.html
 page. The final block of code in my-app.js should look like this at the end of this step:
 
         var myApp = new Framework7({

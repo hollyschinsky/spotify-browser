@@ -4,9 +4,9 @@ title: Module 4&#58; Implement Media Item Detail Page
 ---
 
 ### Overview
-In this module you will add a template to display the details of a track selected from the list view.
+In this module you will add a template to display the details of a track selected from the list view. The new view is shown in the screenshot below. 
 
-<img class="screenshot-lg" src="images/detail.png"/>
+<img class="screenshot" src="images/detail.png"/>
  
 ## Steps
 1. Open **index.html** and add the following template for the media item detail after the list template created in the previous step.
@@ -119,18 +119,21 @@ In this module you will add a template to display the details of a track selecte
   told the router this information via JavaScript for the list view. (See [this link](http://www.idangero.us/framework7/docs/template7-pages.html#.VqbGC1MrKjR) 
   for data-template and data-context info).
    
-  Specify the name of the template `itemTemplate` and use `{{this}}` as the expression to bind to for the data, since it refers to the current 
+  Specify the name of the template `itemTemplate` and use {{this}} as the expression to bind to for the data, since it refers to the current 
   data item.  See [this link](http://www.idangero.us/template7/#.VqbGCVMrKjQ) for more details on other variables and syntax you can use in Template7. 
 
-    <a href='#' class="item-content item-link" data-template='itemTemplate' data-context='{{this}}'>    
+    <a href='#' class="item-content item-link" data-template='itemTemplate' data-context="{{this}}">    
   
-2. There's one more thing we need to do before this will all work properly, and that is to properly format our data using a template helper. 
+2. There's one more thing we need to do before this will all work properly, and that is to properly format our data using a template *helper*. 
  The data being passed in the `data-context` attribute above is currently a JavaScript object since we iterated through an Array of objects
  to build the list, and we're referencing the current context of `this` which is just a singular object from that Array. 
  
         <a href="#" data-template="itemTemplate" data-context="[object Object]" class="item-content item-link">
                                      
  It will try to bind expressions literally from the string `[object Object]` and will fail with an `Uncaught SyntaxError: Unexpected token o`.
+ 
+   <img class="screenshot" src="images/obj-ex.png"/>
+ 
  Instead, we need to use the JSON stringify method to convert it to valid JSON. We can define something called a *helper* to fix this issue. A 
  helper is a function that is called before the data is bound to the template to pre-process it. There are pre-defined ones or you can define 
  your own. See [this link](http://www.idangero.us/template7/#.VqbGCVMrKjQ) for more information on the syntax. 
@@ -160,11 +163,11 @@ your data item and you will see the results  Open the index.html file and add th
          
 2. Now run your app and ensure you can navigate into this new detail view when a list item is clicked. 
 
-    <img class="screenshot-lg" src="images/detail-view.png"/>
+    <img class="screenshot" src="images/detail.png"/>
  
 3. Also, try clicking on the Preview button to ensure you hear audio playing.
 
-4.. You may notice some of the formatting of the controls could be nicer. If you want to fix it, there are some styles set up in the final project **www/css/styles.css** file you 
+4. You may notice some of the formatting of the controls could be nicer. If you want to fix it, there are some styles set up in the final project `www/css/styles.css` file you 
 can copy into yours now to make it more presentable.   
  
  

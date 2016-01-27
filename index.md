@@ -4,16 +4,16 @@ title: PhoneGap Day 2016 Workshop
 ---
 
 ## What You Will Build
-In this workshop you will learn how to create a mobile app that interacts with the Spotify Web API using PhoneGap. Some best
-practices and performance techniques will be taught along the way and you will be introduced to useful plugins to add additional 
-functionality that will enhance the app and provide a more native experience. 
+In this workshop you will learn how to create a mobile app that interacts with the [Spotify Web API](https://developer.spotify.com/web-api/) 
+using PhoneGap. Some best practices and performance techniques will be taught along the way and you will be introduced to useful plugins to 
+add additional functionality that will enhance the app and provide a more native experience. 
 
 <img class="screenshot" src="images/main.png"/>
 <img class="screenshot" src="images/list.png"/>
 <img class="screenshot" src="images/detail.png"/>
 <!--<img class="screenshot" src="images/menu.png"/>-->
-<img class="screenshot" src="images/swipe-play.png"/>
-<img class="screenshot" src="images/swipe-right.png"/>
+<!--<img class="screenshot" src="images/swipe-play.png"/>-->
+<!--<img class="screenshot" src="images/swipe-right.png"/>-->
 
 ## Dependencies
 We will be using PhoneGap, [Framework7](http://www.idangero.us/framework7) and the [Font Awesome Icon Font library](http://fortawesome.github.io/Font-Awesome/)
@@ -30,7 +30,7 @@ We will be using PhoneGap, [Framework7](http://www.idangero.us/framework7) and t
 - Common mobile app development paradigms (navigation, view stacks, routing) and how to implement them.
 - How to implement templates to set up a single page architecture.
 - How to use PhoneGap plugins in your mobile apps.
-- How to interact with the Spotify REST api to retrieve data. 
+- How to interact with the [Spotify API](https://developer.spotify.com/web-api/) to retrieve data. 
 - Tips on handling specific mobile challenges to make your apps feel native and perform well. 
 - How to configure your apps (preferences, whitelisting etc). 
 

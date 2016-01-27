@@ -37,38 +37,12 @@ This is a 2-part module where you will implement the submit button handling from
             }
         })
 
-2. If you try to run the app in the browser you will get some errors related to violating the Content Security Policy. You'll need to edit
- the default one currently in place in the index.html to give more access. **Content Security Policy** is defined as:
-  
- >A mechanism web applications can use to mitigate a broad class of content injection vulnerabilities, such as cross-site scripting (XSS)
-  
- Essentially it allows you to define where your app is allowed to load content from. You need to customize it for your own apps based on your
- needs. You also must ensure the `cordova-plugin-whitelist` has been added to your project. (Note that it was part of the base template we used
- and was already included for us in this case). To learn more about how to customize it specifically, check out the [Cordova Whitelist Guide](http://cordova.apache.org/docs/en/latest/guide/appdev/whitelist/index.html)
-  and [Cordova Whitelist Plugin](https://github.com/apache/cordova-plugin-whitelist/blob/master/README.md#content-security-policy).  
- Also, you can get help generating your specific header to include in the meta tag more easily using this [website](http://cspisawesome.com/). 
- 
- Open the index.html file and replace the current policy with this one:
-     
-         <meta http-equiv="Content-Security-Policy" content="default-src 'self' data: gap: https://ssl.gstatic.com 'unsafe-eval';
-              script-src * 'unsafe-eval'; style-src 'self'; media-src *; frame-src *;  img-src * data:; connect-src * 'unsafe-eval'">
 
-        
- >Run the app in the browser and make sure you see an alert with a number of results returned. Use the Chrome Developer tools to
+2. Open the app in the browser and make sure you see an alert with a number of results returned. Use the Chrome Developer tools to
  inspect or check the console if you do not see it. 
  
-3. If you plan to run on the Android platform, you should also open the config.xml now and add this line into the Android platform-specific section:
-
-        <allow-navigation href="http://*/*" />
-        
-   The end result looks like:
-   
-        <platform name="android">
-                <preference name="android-minSdkVersion" value="14" />
-                <allow-intent href="market:*" />
-                <allow-navigation href="http://*/*" />
-        </platform>
-
+  <img class="screenshot-lg" src="images/numResults.png"/>
+ 
 ###Part 2
 
 1. Add the following template definition to represent our list view in index.html just before the `<script>` include for cordova.js:
@@ -136,9 +110,9 @@ This is a 2-part module where you will implement the submit button handling from
 >Templates are loaded into the DOM when the app initializes and bound to with data at request time. The differences between the different ways
 you can load pages using Framework7 is worth reviewing [here](http://www.idangero.us/framework7/docs/pages-ajax.html#.Vqbv91MrKjQ). 
 
-2. Open my-app.js again and modify the Submit button handler's `success` function to remove the alert and instead use the built-in F7 router to 
-load this new template. We'll also set the data context to the results of our Spotify call and the expressions in the template will be bound to
-the data.
+2. Open `my-app.js` again and modify the Submit button handler's `success` function to remove the alert and instead use the built-in F7 router to 
+load the new list template. We'll also set the context for it to the results of our Spotify call. The expressions in the template will be bound to
+that data context.
 
         $$.ajax({
             dataType: 'json',
@@ -157,7 +131,7 @@ the data.
 3. Now try running your app again and check to make sure you see the new list page returned with the results after you submit. Your list page 
 should look something like the following:
 
-  <img class="screenshot-lg" src="images/list.png"/>
+  <img class="screenshot" src="images/list.png"/>
 
 4. Go ahead and delete the about.html page in your root **www** folder to avoid future confusion. It was part of the original F7 template 
 project we created from but will not be used in the final app. 
