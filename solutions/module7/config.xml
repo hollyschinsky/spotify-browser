@@ -20,7 +20,8 @@
         <preference name="android-minSdkVersion" value="14" />
         <allow-intent href="market:*" />
         <allow-navigation href="http://*/*" />
-        <icon density="ldpi" src="resources/android/icon/drawable-ldpi-icon.png" />
+        <!-- Need to get everything from resources folder in final project out for these to work with CLI -->
+        <!--<icon density="ldpi" src="resources/android/icon/drawable-ldpi-icon.png" />
         <icon density="mdpi" src="resources/android/icon/drawable-mdpi-icon.png" />
         <icon density="hdpi" src="resources/android/icon/drawable-hdpi-icon.png" />
         <icon density="xhdpi" src="resources/android/icon/drawable-xhdpi-icon.png" />
@@ -37,13 +38,14 @@
         <splash density="port-hdpi" src="resources/android/splash/drawable-port-hdpi-screen.png" />
         <splash density="port-xhdpi" src="resources/android/splash/drawable-port-xhdpi-screen.png" />
         <splash density="port-xxhdpi" src="resources/android/splash/drawable-port-xxhdpi-screen.png" />
-        <splash density="port-xxxhdpi" src="resources/android/splash/drawable-port-xxxhdpi-screen.png" />
+        <splash density="port-xxxhdpi" src="resources/android/splash/drawable-port-xxxhdpi-screen.png" />-->
     </platform>
     <platform name="ios">
         <allow-intent href="itms:*" />
         <allow-intent href="itms-apps:*" />
         <preference name="BackupWebStorage" value="none" />
-        <icon height="57" src="resources/ios/icon/icon.png" width="57" />
+        <!-- Need to get everything from final resources folder in final project out for these to work with CLI -->
+        <!--<icon height="57" src="resources/ios/icon/icon.png" width="57" />
         <icon height="114" src="resources/ios/icon/icon@2x.png" width="114" />
         <icon height="40" src="resources/ios/icon/icon-40.png" width="40" />
         <icon height="80" src="resources/ios/icon/icon-40@2x.png" width="80" />
@@ -68,7 +70,7 @@
         <splash height="2048" src="resources/ios/splash/Default-Portrait@2x~ipad.png" width="1536" />
         <splash height="1024" src="resources/ios/splash/Default-Portrait~ipad.png" width="768" />
         <splash height="960" src="resources/ios/splash/Default@2x~iphone.png" width="640" />
-        <splash height="480" src="resources/ios/splash/Default~iphone.png" width="320" />
+        <splash height="480" src="resources/ios/splash/Default~iphone.png" width="320" />-->
     </platform>
     <preference name="DisallowOverscroll" value="true" />
     <preference name="SplashScreen" value="screen" />
