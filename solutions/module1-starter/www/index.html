@@ -32,12 +32,10 @@
     <link rel="stylesheet" href="lib/framework7/css/framework7.ios.min.css">
     <link rel="stylesheet" href="lib/framework7/css/framework7.ios.colors.min.css">
 
-    <!-- Font-awesome icon library -->
-    <link rel="stylesheet" href="lib/font-awesome/css/font-awesome.min.css">
     <link rel="stylesheet" href="css/styles.css">
 </head>
 
-<body class="layout-dark">
+<body>
     <!-- Status bar overlay for full screen mode (PhoneGap) -->
     <div class="statusbar-overlay"></div>
     <!-- Panels overlay-->
@@ -48,85 +46,45 @@
             <p>Left panel content goes here</p>
         </div>
     </div>
+
+    <!-- Views -->
     <div class="views">
-        <!-- Main view-->
+        <!-- Your main view, should have "view-main" class -->
         <div class="view view-main">
-            <!-- Top Navigation Bar-->
-            <div class="navbar" >
+            <!-- Top Navbar-->
+            <div class="navbar">
                 <div class="navbar-inner">
-                    <!-- Home navbar -->
-                    <div class="left ">
-                        <!-- Left side navbar contains only icon -->
-                        <a href="#" class="link icon-only open-panel">
-                            <i class="icon icon-bars"></i>
-                        </a>
+                    <!-- We need cool sliding animation on title element, so we have additional "sliding" class -->
+                    <div class="center sliding">Awesome App</div>
+                    <div class="right">
+                        <!--
+                          Right link contains only icon - additional "icon-only" class
+                          Additional "open-panel" class tells app to open panel when we click on this link
+                        -->
+                        <a href="#" class="link icon-only open-panel"><i class="icon icon-bars"></i></a>
                     </div>
-                    <div class="center sliding">Spotify Browser</div>
                 </div>
             </div>
-
-            <!-- Pages -->
+            <!-- Pages container, because we use fixed-through navbar and toolbar, it has additional appropriate classes-->
             <div class="pages navbar-through toolbar-through">
-                <!-- Page, data-page contains page name-->
+                <!-- Page, "data-page" contains page name -->
                 <div data-page="index" class="page">
-
-                    <!-- Scrollable page content-->
+                    <!-- Scrollable page content -->
                     <div class="page-content">
-                        <div class="content-block-title">Criteria</div>
-                        <div class="list-block">
-                            <ul>
-                                <li>
-                                    <div class="item-content">
-                                        <div class="item-media"><i class="icon fa fa-music"></i></div>
-                                        <div class="item-inner">
-                                            <div class="item-title label">Songs</div>
-                                            <div class="item-input">
-                                                <input id="term" type="text" placeholder="Search for..." value=""/>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </li>
-
-                                <li>
-                                    <div class="item-content">
-                                        <div class="item-media"><i class="icon fa fa-list-ol"></i></div>
-                                        <div class="item-inner">
-                                            <div class="item-title label">Max Results</div>
-                                            <div class="item-input">
-                                                <div class="range-slider">
-                                                    <input id="numResults" type="range" min="0" max="50" value="20" step="1"/>
-                                                </div>
-                                            </div>
-                                            <div class="item-input rangeVal">
-                                                <input id="sliderVal" type="text" disabled value="20">
-                                            </div>
-                                        </div>
-                                    </div>
-                                </li>
-                            </ul>
-                        </div>
                         <div class="content-block">
-                            <div class="row">
-                                <div class="col-100">
-                                    <input id="btnSearch" type="button" value="Submit" class="button button-big button-fill color-green"/>
-                                </div>
-                            </div>
+                            <p>Page content goes here</p>
+                            <!-- Link to another page -->
+                            <a href="about.html">About app</a>
                         </div>
                     </div>
                 </div>
             </div>
-
-            <!-- Bottom Toolbar on every view unless no-toolbar class specified (see item template)-->
+            <!-- Bottom Toolbar-->
             <div class="toolbar">
                 <div class="toolbar-inner">
-                    <a href="http://www.spotify.com" class="link external">
-                        <i class="icon icon-spotify"></i>
-                        <p class="color-white">&nbsp;Spotify</p>
-                    </a>
-
-                    <a href="http://www.idangero.us/framework7" class="link external">
-                        <i class="icon icon-f7"></i>
-                    </a>
+                    <!-- Toolbar links -->
+                    <a href="#" class="link">Link 1</a>
+                    <a href="#" class="link">Link 2</a>
                 </div>
             </div>
         </div>
