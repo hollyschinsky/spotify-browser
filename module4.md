@@ -168,9 +168,7 @@ your data item and you will see the results  Open the index.html file and add th
 3. Also, try clicking on the Preview button to ensure you hear audio playing.
 
 4. You may notice some of the formatting of the controls could be nicer. If you want to fix it, there are some styles set up in the final project `www/css/styles.css` file you 
-can copy into yours now to make it more presentable.   
- 
- 
+can copy into yours now to make it more presentable.    
     
 ### Bonus Step  
 1. If you have the PhoneGap CLI setup to build locally with a platform SDK, try using it to run your app on the emulator or a device:

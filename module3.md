@@ -7,10 +7,9 @@ title: Module 3&#58; Spotify API Call and Results Handling
 This is a 2-part module where you will implement the submit button handling from our main view to call the Spotify API in Part 1 and then
  create your list template to load the data into in Part 2. 
   
-  <img class="screenshot-lg" src="images/list.png"/>
+  <!--<img class="screenshot-lg" src="images/list2.png"/>-->
   
 ### Part 1
-  
 1. Open **my-app.js** and add the following code block to handle the submit button using page level events:
 
         $$(document).on('click', '#btnSearch', function (e) {
@@ -39,12 +38,11 @@ This is a 2-part module where you will implement the submit button handling from
 
 
 2. Open the app in the browser and make sure you see an alert with a number of results returned. Use the Chrome Developer tools to
- inspect or check the console if you do not see it. 
+ help you inspect and debug as needed. 
  
   <img class="screenshot-lg" src="images/numResults.png"/>
  
 ###Part 2
-
 1. Add the following template definition to represent our list view in index.html just before the `<script>` include for cordova.js:
 
         <script id="listTemplate" type="text/template7">
@@ -131,9 +129,9 @@ that data context.
 3. Now try running your app again and check to make sure you see the new list page returned with the results after you submit. Your list page 
 should look something like the following:
 
-  <img class="screenshot" src="images/list.png"/>
+  <img class="screenshot" src="images/list2.png"/>
 
-4. Go ahead and delete the about.html page in your root **www** folder to avoid future confusion. It was part of the original F7 template 
+4. Go ahead and delete the `about.html` page in your root **www** folder to avoid future confusion. It was part of the original F7 template 
 project we created from but will not be used in the final app. 
 
 <div class="row" style="margin-top:40px;">

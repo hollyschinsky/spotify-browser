@@ -187,8 +187,9 @@ page. The final block of code in my-app.js should look like this at the end of t
             console.log("Device is ready!");
         });
 
+6. Ensure you see the application is shown and looks like what you see below:
 
-6. Remove the `www/about.html` file as well if you still have it in your project.
+ <img class="screenshot-lg" src="images/main2.png"/>        
 
 <div class="row" style="margin-top:40px;">
 <div class="col-sm-12">
