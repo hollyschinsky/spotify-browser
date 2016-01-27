@@ -44,6 +44,7 @@ $$(document).on('click', '#btnSearch', function (e) {
             dataType: 'json',
             url: url,
             success: function (resp) {
+                //Uncomment for Part 1 of this module
                 //myApp.alert("Number of results " + resp.tracks.items.length);
                 mainView.router.load({
                       template: Template7.templates.listTemplate,

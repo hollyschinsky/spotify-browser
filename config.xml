@@ -8,7 +8,7 @@
         Holly Schinsky
     </author>
     <content src="index.html" />
-    <icon src="spotify.png" />
+    <icon src="icon.png" />
     <access origin="*" />
     <allow-intent href="http://*/*" />
     <allow-intent href="https://*/*" />
