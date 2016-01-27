@@ -56,7 +56,18 @@ This is a 2-part module where you will implement the submit button handling from
         
  >Run the app in the browser and make sure you see an alert with a number of results returned. Use the Chrome Developer tools to
  inspect or check the console if you do not see it. 
+ 
+3. If you plan to run on the Android platform, you should also open the config.xml now and add this line into the Android platform-specific section:
 
+        <allow-navigation href="http://*/*" />
+        
+   The end result looks like:
+   
+        <platform name="android">
+                <preference name="android-minSdkVersion" value="14" />
+                <allow-intent href="market:*" />
+                <allow-navigation href="http://*/*" />
+        </platform>
 
 ###Part 2
 

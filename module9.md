@@ -43,7 +43,7 @@ Update your apps in the iOS App Store quickly without waiting on long approval p
 - [cordova-live-update](https://www.npmjs.com/package/cordova-live-update)
 - [Ionic Deploy](http://docs.ionic.io/docs/deploy-from-scratch) service
   
-### A/B  Testing
+### A/B Testing
 Experiment with your app and see what works best. Change colors, layout, images, marketing copy or whatever you want to test to 
   understand the impact of the change by using an A/B testing service. 
   

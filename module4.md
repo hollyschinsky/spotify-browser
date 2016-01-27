@@ -147,7 +147,7 @@ In this module you will add a template to display the details of a track selecte
         return str.replace(/'/g, '&#39;');
     });
 
-3. Now we need to specify where we want to use the heler in the template. We need to format the data being passed into the *itemTemplate*, so 
+3. Now we need to specify where we want to use the helper in the template. We need to format the data being passed into the *itemTemplate*, so 
 open index.html and add it into the `data-context` attribute before the `this` object (be sure to leave a space too). The helper will then be applied to 
 your data item and you will see the results  Open the index.html file and add the `stringify` attribute as shown below:
  
@@ -162,9 +162,12 @@ your data item and you will see the results  Open the index.html file and add th
 
     <img class="screenshot-lg" src="images/detail-view.png"/>
  
-    The formatting isn't perfect but we'll add some styling to clean that up towards the end.  
+3. Also, try clicking on the Preview button to ensure you hear audio playing.
+
+4.. You may notice some of the formatting of the controls could be nicer. If you want to fix it, there are some styles set up in the final project **www/css/styles.css** file you 
+can copy into yours now to make it more presentable.   
  
-3. Also, try clicking on the Preview button to ensure you hear audio playing. 
+ 
     
 ### Bonus Step  
 1. If you have the PhoneGap CLI setup to build locally with a platform SDK, try using it to run your app on the emulator or a device:

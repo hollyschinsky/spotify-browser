@@ -1,16 +1,12 @@
 ---
 layout: module
-title: Module 5&#58; Add Menu/Side Drawer Navigation and Swipeouts
+title: Module 5&#58; Add Side Menu and Swipeout Handling
 ---
 
 ### Overview
 In this step we'll add some common mobile UX features to our app to make it more useful; menus (aka side-drawer navigation) and swipeouts.  
  
 ## Side Menu
-
-*** Need to add css to fix it up ***
-*** NEED TO ADD FONT-AWESOME FOR THIS!! ** 
-Icons won't show up in the detail view yet either 
 
 The decision to use a slide-out menu (also known as a [navigation drawer](https://www.google.com/design/spec/patterns/navigation-drawer.html)
 or hamburger menu) is widely debated, but it has been a common mobile pattern in the recent past. It might be best used for less commonly used
@@ -81,11 +77,13 @@ Open my-app.js and add the following basic click handlers to the end of the file
 
 ## Swipeouts
 
-Now let's add swipeout handling to our list template to allow a user to do various actions without leaving the list. 
+Now let's look at how we can use swipeout handling with Framework7. Swipeouts are a common pattern that allow a user to swipe left or right to uncover further actions to take on a list item. Notice the colored buttons shown on the list items below. 
 
     <img class="screenshot-md" src="images/play-front.png"/><img class="screenshot-md" src="images/swipe-front.png"/>
 
-1. Open index.html, locate the list template definition and change this section to:
+The iOS Reminders app is another good example of using swipeouts. 
+
+1. Open index.html, locate the list template definition and take a look at the parts with swipeout related classes. 
    
             <li class="swipeout">
                <div class="swipeout-content">
@@ -112,30 +110,38 @@ Now let's add swipeout handling to our list template to allow a user to do vario
                </div>
            </li>
 
-2. In the above swipeouts we have buttons that require some handlers to invoke code to actually do something when clicked. In this
-step we will add the handling for them.
+2. In the above definition we have buttons in the `swipeout-actions-right` and `swipeout-actions-left` that require some handlers to invoke code to actually do something when clicked. In this
+step we will add the handling for them. 
 
-    {{@index}} - number of current item in list 
+  - Note the `data-item="{{@index}}"` syntax. This will pass the index of the item clicked on so we can then reference the right item in the code.  
  
-#### Favorites Handling
+3. Add a Page Init handler 
+
+    
+        myApp.onPageInit('list', function (page) {
+        
+        });'
+        
+4. Add Favorites Handling        
+        
 The `star` button indicates that the user can add this item as a favorite. Open **my-app.js** and add the following into the list page
- init handler:
- 
+ init handler created in the previous step `myApp.onPageInit('list', function (page) {...`
 
     $$(page.container).find('.favorite').on('click', function (e) {
-         e.stopPropagation();
          var item = page.context[this.dataset.item]; //this.dataset.item returns data held in data-item attribute set in template
          myApp.alert(item.name + ' added to favorites!');
      });
+              
+   In the above, note the use of the `page.context[this.dataset.item];` As noted above, we passed the index of the current item clicked on the `data-item` attribute. Here 
+   we use it to retrieve that index from the page context. The page context is the array of results we received and supplied for the list template.
+        
      
->It will simply alert at the moment but you could extend this to add to an array of favorites and then display it in another view.     
-     
-#### Preview Handling
+5. Add Preview Handling
+
 The left swipeout `play` button indicates the user can click it to play a preview of this item. Open **my-app.js** and add the following into 
 the list page init handler as well:
 
     $$(page.container).find('.preview').on('click', function (e) {
-        e.stopPropagation();
         var item = page.context[this.dataset.item]; //this.dataset.item returns data held in data-item attribute set in template
 
         myApp.alert("Previewing " + item.name);
@@ -144,12 +150,18 @@ the list page init handler as well:
         media.play();
         setTimeout(function() {media.stop()},7000) //preview for 7 seconds
     });
+        
+##### Dependencies
+    The preview feature above requires the Media Plugin. If you're testing with the PhoneGap Developer app on your mobile device, then it's already 
+    configured for you in the sandboxed environment. If you are running locally with the CLI however, be sure to add the plugin. 
     
-    ### Dependencies
     - [Media Plugin](https://github.com/apache/cordova-plugin-media)
            
-            $ phonegap plugin add cordova-plugin-media
+            $ phonegap plugin add cordova-plugin-media --save
 
+    **Note:** This command will also add the Cordova File Plugin by default since it's a required dependency. 
+    
+6. You may notice there's also a `Share` swipeout button but we will be handling that in a later module since it requires a 3rd party plugin. 
     
 <div class="row" style="margin-top:40px;">
 <div class="col-sm-12">

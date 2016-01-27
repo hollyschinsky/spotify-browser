@@ -2,63 +2,80 @@
 layout: module
 title: Module 8&#58; Add Native Share Feature
 ---
-In this lesson we'll learn how to share a destination's information through the device's native sharing options. 
+In this module we'll learn how to share a media item with a friend through messaging, email etc using the device's native sharing features. 
 
 ### Steps
 Prior to this we added the button for sharing on both the list and item detail views, however they don't actually do anything yet.
 In this module we'll add event handling to them and use the Social Sharing plugin. 
 
 1. Open **my-app.js** and locate the page init event handler for the *list* page (`myApp.onPageInit('list')...`). 
-2. Add the following code to handle when a user clicks the share button on the swipeout:
-  
+2. Add the following code to handle when a user clicks the share button on the swipeout. You can add it just after the preview handling:
+
          $$(page.container).find('.share').on('click', function (e) {
-             e.stopPropagation();
-             var item = page.context[this.dataset.item]; //this.dataset.item returns data held in data-item attribute set in template
-     
-             if (window.plugins && window.plugins.socialsharing) {
-                 window.plugins.socialsharing.share("Hey! My new favorite song is " + item.name + " check it out!",
-                     'Check this out', item.album.images[2].url, item.preview_url,
-                     function () {
-                         console.log("Share Success")
-                     },
-                     function (error) {
-                         console.log("Share fail " + error)
-                     });
-             }
-             else console.log("Share plugin not found");
+                 var item = page.context[this.dataset.item];
+         
+                 if (window.plugins && window.plugins.socialsharing) {
+                     window.plugins.socialsharing.share("Hey! My new favorite song is " + item.name + " check it out!",
+                         'Check this out', item.album.images[2].url, item.preview_url,
+                         function () {
+                             console.log("Share Success")
+                         },
+                         function (error) {
+                             console.log("Share fail " + error)
+                         });
+                 }
+                 else myApp.alert("Share plugin not found");
          });
 
-3. Next add the share handler for the media detail page under the media page init code block  (`myApp.onPageInit('media')...`). 
+3. There's also a share icon at the bottom of the Media Detail page we can implement in this step as well. In **my-app.js**, add the following block to handle `pageInit`
+events for the media detail page.  
         
-        if (window.plugins && window.plugins.socialsharing) {
-            window.plugins.socialsharing.share("Hey! My new favorite song is " + item.name + " check it out!",
-                'Check this out', item.album.images[2].url, item.preview_url,
-                function () {
-                    console.log("Share Success")
-                },
-                function (error) {
-                    console.log("Share fail " + error)
-                });
-        }
-        else console.log("Share plugin not found");
+        // Media Item Page Handling
+        myApp.onPageInit('media', function (page) {
+            var item = page.context;
+        
+             $$(page.container).find('.share').on('click', function (e) {
+                if (window.plugins && window.plugins.socialsharing) {
+                    window.plugins.socialsharing.share("Hey! My new favorite song is " + item.name + " check it out!",
+                        'Check this out', item.album.images[2].url, item.preview_url,
+                        function () {
+                            console.log("Share Success")
+                        },
+                        function (error) {
+                            console.log("Share fail " + error)
+                        });
+                }
+                else myApp.alert("Share plugin not found");
+            });
+        });
 
-Now run the application and ensure you see the native sharing working on your desired device. For instance, on iOS you will see something like shown
-below:
+Notice how we can just set the item to the `page.context` value itself since it has already been selected and passed in for this view.
+ 
+4. There's one more icon on the bottom left bar we could add handling for at this point too, the favorites (star) icon. Add another block into the `pageInit` handler
+ for the media detail page:
+ 
+        $$(page.container).find('.favorite').on('click', function (e) {
+            myApp.alert(item.name + ' added to favorites!');
+        });
 
-<img class="screenshot-lg" src="images/share1.png"/>
-<img class="screenshot-lg" src="images/share2.png"/>
-    
->The options shown here will depend on your particular devices' native sharing options.
 
 ### Dependencies
  
 -[Social Sharing 3rd Party Plugin](https://github.com/EddyVerbruggen/SocialSharing-PhoneGap-Plugin)
   
-     $ phonegap plugin add cordova-plugin-x-socialsharing
+     $ phonegap plugin add cordova-plugin-x-socialsharing --save
     
-    
- > The Social Sharing plugin is already included in the config.xml from the final project repo and will be added automatically if you are using it with the 
-  CLI locally.  If you're using the PhoneGap Developer App to preview your app however, this will not work since it is a 3rd party plugin.
+If you're using the CLI locally to build your app, you should add the required plugin shown above first. At the moment the PhoneGap Developer App does not include this plugin
+ so if you're using that to view and test the app then it will not work at this time. 
+
+It should look something like below when you run it:
+
+       <img class="screenshot-lg" src="images/share1.png"/>
+       <img class="screenshot-lg" src="images/share2.png"/>
+        
+  >The options shown here will depend on your particular devices' native sharing options.
+
+ 
 
 <div class="row" style="margin-top:40px;">
  <div class="col-sm-12">
