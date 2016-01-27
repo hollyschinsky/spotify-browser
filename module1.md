@@ -2,7 +2,7 @@
 layout: module
 title: Module 1&#58; Set up the project
 ---
-### Download/Clone Final App and Solutions
+### Download Final App Project
 The final application source for the project we'll be building in this workshop is located [here](https://github.com/hollyschinsky/spotify-browser).
 
 If you haven't done this prior to the workshop, download the zip file for the [starter project](https://github.com/hollyschinsky/spotify-browser/archive/master.zip) 
@@ -65,7 +65,7 @@ and [Ionicons](http://ionicons.com/).
         <!-- Using Framework7 Icons -->
         <i class="icon icon-bars"></i>
 
-To use the Font Awesome icons, specify the `icon` and `fa` class followed by the name of the icon you want to use. Find all the icons available
+4. To use the Font Awesome icons, specify the `icon` and `fa` class followed by the name of the icon you want to use. Find all the icons available
 [here](http://fortawesome.github.io/Font-Awesome/icons/). 
         
         <!-- Using Font Awesome Icons-->
@@ -73,13 +73,14 @@ To use the Font Awesome icons, specify the `icon` and `fa` class followed by the
 
 
 ### Setup Trouble?        
-If you have any problems with setting up your project based on the above, remember you can simply copy over the files located in the **solutions** 
+If you have any problems with setting up your project based on the above, remember you can simply copy over the files located in the **[solutions](https://github.com/hollyschinsky/spotify-browser/tree/master/solutions)** 
 module1 starter folder into your project's root (overwrite them) and start from there. 
 
 ### Bonus Step: Run the Final Application
-Feel free to try out the sample app we'll be building yourself.  
+Try out the final app.  
 
-1. Serve and pair with the PhoneGap Developer App from the PhoneGap CLI or PhoneGap Desktop:  
+1. Open the index.html of the `www/root` in a browser to get a better idea of how it works, though there will be some limits to what you can do.
+1. Better yet, serve and pair with the PhoneGap Developer App from the PhoneGap CLI or PhoneGap Desktop:  
   
    - **From PhoneGap CLI** 
      1. Locate where you downloaded the **spotify-browser** project from my GitHub and navigate into the root from the command line          
@@ -109,7 +110,7 @@ Feel free to try out the sample app we'll be building yourself.
 
 2. Ensure you see the application is shown and looks like what you see below: 
 
-   <img class="screenshot-full" src="images/main.png"/>   
+   <img class="screenshot-lg" src="images/main2.png"/>   
  
 
 <div class="row" style="margin-top:40px;">

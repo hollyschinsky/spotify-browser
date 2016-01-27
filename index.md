@@ -12,7 +12,7 @@ add additional functionality that will enhance the app and provide a more native
 <img class="screenshot" src="images/list.png"/>
 <img class="screenshot" src="images/detail.png"/>
 <!--<img class="screenshot" src="images/menu.png"/>-->
-<!--<img class="screenshot" src="images/swipe-play.png"/>-->
+<img class="screenshot" src="images/swipe-play.png"/>
 <!--<img class="screenshot" src="images/swipe-right.png"/>-->
 
 ## Dependencies
