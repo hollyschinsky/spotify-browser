@@ -6,8 +6,6 @@ title: Module 4&#58; Implement Media Item Detail Page
 ### Overview
 In this module you will add a template to display the details of a track selected from the list view. The new view is shown in the screenshot below. 
 
- <img class="screenshot-lg" src="images/detail2.png"/>
- 
 ## Steps
 1. Open `index.html` and add the following template for the media item detail after the list template created in the previous step.
         
@@ -122,7 +120,7 @@ In this module you will add a template to display the details of a track selecte
       Specify the name of the template `itemTemplate` and use &#123;&#123;this&#125;&#125; as the expression to bind to for the data, since it refers to the current 
       data item.  See [this link](http://www.idangero.us/template7/#.VqbGCVMrKjQ) for more details on other variables and syntax you can use in Template7. 
 
-        <a href='#' class="item-content item-link" data-template='itemTemplate' data-context="{{this}}">    
+        <a href='#' class="item-content item-link" data-template='itemTemplate' data-context="`{{this}}`">    
   
 2. There's one more thing we need to do before this will all work properly, and that is to properly format our data using a template *helper*. 
  The data being passed in the `data-context` attribute above is currently a JavaScript object since we iterated through an Array of objects
@@ -130,9 +128,10 @@ In this module you will add a template to display the details of a track selecte
  
         <a href="#" data-template="itemTemplate" data-context="[object Object]" class="item-content item-link">
                                      
-    It will try to bind expressions literally from the string `[object Object]` and will fail with an `Uncaught SyntaxError: Unexpected token o`.
+    It will try to bind expressions literally from the string `[object Object]` and will fail with an `Uncaught SyntaxError: Unexpected token o`
+    like shown below:
  
-   <img class="screenshot" src="images/obj-ex.png"/>
+    <img class="screenshot-lg" src="images/obj-ex.png"/>
  
    Instead, we need to use the JSON stringify method to convert it to valid JSON. We can define something called a *helper* to fix this issue. A 
    helper is a function that is called before the data is bound to the template to pre-process it. There are pre-defined ones or you can define 
@@ -140,10 +139,10 @@ In this module you will add a template to display the details of a track selecte
  
    Before we move on, we should add one more formatting detail into our `stringify` helper. Sometimes the wrong type of apostrophe is returned 
    and it will cause an error depending on what you searched. We can use regex to do a replace on any of these invalid apostrophe's
-   and set it to the standard HTML apostrophe (`&#39;) to fix it.  
+   and set it to the standard HTML apostrophe (`&#39;`) to fix it.  
  
- **Important:** Template helpers need to be defined before the app is initialized, so be sure to add this to the ***top*** of the `my-app.js` 
- file. 
+   **Important:** Template helpers need to be defined before the app is initialized, so be sure to add this to the ***top*** of the `my-app.js` 
+   file. 
 
     Template7.registerHelper('stringify', function (context){
         var str = JSON.stringify(context);
@@ -152,15 +151,15 @@ In this module you will add a template to display the details of a track selecte
 
 3. Open the `index.html` file and apply the `stringify` helper to the `data-context` object (`this`) being passed in:
  
-        <a href='#' class="item-content item-link" data-template='itemTemplate' data-context='{{stringify this}}'>
+        <a href="#" class="item-content item-link" data-template="itemTemplate" data-context="{{stringify this}}">
         
     If you inspect the list page in the chrome dev tools you'll see the JSON data displayed as the value of the `data-context` attribute. 
             
-    <img class="screenshot" src="images/itemData.png"/>
+    <img class="screenshot-lg" src="images/itemData.png"/>
          
 2. Now run your app and ensure you can navigate into this new detail view when a list item is clicked. 
 
-    <img class="screenshot" src="images/detail.png"/>
+    <img class="screenshot-lg" src="images/detail2.png"/>
  
 3. If you haven't already tried clicking on the Preview button to ensure you hear audio playing.
 

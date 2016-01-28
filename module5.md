@@ -53,9 +53,9 @@ element in it that we can replace with our menu list. Modify the existing panel 
             </div>
         </div>
 
-  >Notice the panel has a `reveal` effect. You could change it to `panel-cover` to try out that effect instead.
+   >Notice the panel has a `reveal` effect. You could change it to `panel-cover` to try out that effect instead.
    
-    <img class="screenshot-lg" src="images/menu-p.png"/>
+   <img class="screenshot-lg" src="images/menu-p.png"/>
 
 2. Now we need to add handling for each of these menu list items. Each of them has an id we can use to add a click event to. 
 Open `my-app.js` and add the following basic click handlers to the end of the file for each of the id's:
@@ -83,9 +83,8 @@ right to uncover further actions to take on a list item. Notice the colored butt
 
    <img class="screenshot-md" src="images/play-front.png"/><img class="screenshot-md" src="images/swipe-front.png"/>
 
-The iOS Reminders app is another good example of using swipeouts.
-   <img class="screenshot-md" src="images/remind1.png"/>
-   <img class="screenshot-md" src="images/remind2.png"/>
+   The iOS Reminders app is another good example of using swipeouts.
+   <img class="screenshot" src="images/remind2.png"/>
 
 
 1. Open `index.html`, locate the list template definition and take a look at the parts with `swipeout` related classes. 
@@ -118,7 +117,7 @@ The iOS Reminders app is another good example of using swipeouts.
 2. In the above definition we have buttons in the `swipeout-actions-right` and `swipeout-actions-left` that require some handlers to invoke code to actually do something when clicked. In this
 step we will add the handling for them. 
 
-  >The `data-item="{{@index}}"` syntax will pass the index of the item clicked on so we can then reference the right item in the code.  
+   >The `data-item="{{@index}}"` syntax will pass the index of the item clicked on so we can then reference the right item in the code.  
  
 3. Add a Page Init handler to use for setting up events we want to handle on the list page specifically. 
     
@@ -134,7 +133,7 @@ step we will add the handling for them.
             myApp.alert(item.name + ' added to favorites!');
         });
               
-   >Note the use of the `page.context[this.dataset.item];` As mentioned above, we passed the index of the current item clicked on the `data-item` attribute. Here 
+    >Note the use of the `page.context[this.dataset.item];` As mentioned above, we passed the index of the current item clicked on the `data-item` attribute. Here 
    we use it to retrieve that index from the page context. The page context is the array of results we received and supplied for the list template.
         
      
@@ -159,13 +158,13 @@ the list page init handler as well:
            
             $ phonegap plugin add cordova-plugin-media --save
 
-  **Note:** This command will also add the Cordova File Plugin by default since it's a required dependency. 
+  >This command will also add the Cordova File Plugin by default since it's a required dependency. 
     
 6. You may notice there's also a `Share` swipeout button but we will be handling that in a later module since it requires a 3rd party plugin. 
     
 7. Run the app to make sure you see the click events firing when you tap on the Preview and Favorites buttons in the swipeouts.
  
- >Based on the F7 docs, the swipeout support will not work well in the browser so you should test this feature via the PhoneGap Developer App or the CLI locally.
+  >Based on the F7 docs, the swipeout support will not work well in the browser so you should test this feature via the PhoneGap Developer App or the CLI locally.
     
 <div class="row" style="margin-top:40px;">
 <div class="col-sm-12">
