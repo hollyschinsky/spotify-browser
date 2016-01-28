@@ -10,7 +10,7 @@ at some popular preferences and settings you should be aware of when building yo
 #### Common Preferences
 1. Webview Bounce Effect / DisallowOverscroll
 
-    <img class="screenshot-lg" src="images/bounce.png"/>
+    <img class="screenshot-md" src="images/bounce.png"/>
 
    By default the webview will have a bounce effect on iOS. Normally you would want your nav bar and toolbars to stay fixed though, so typically
    you'll want to disable this effect in your apps. Set this property to true in your config.xml:
@@ -31,8 +31,7 @@ added to your project (already included in the base template by default) and add
    
   Open the `index.html` file and add the following Content Security Policy meta tag. This will allow the access required for this particcular app. 
      
-         <meta http-equiv="Content-Security-Policy" content="default-src 'self' data: gap: https://ssl.gstatic.com 'unsafe-eval';
-              script-src * 'unsafe-eval'; style-src 'self'; media-src *; frame-src *;  img-src * data:; connect-src * 'unsafe-eval'">
+     <meta http-equiv="Content-Security-Policy" content="default-src 'self' data: gap: https://ssl.gstatic.com 'unsafe-eval'; script-src * 'unsafe-eval'; style-src 'self'; media-src *; frame-src *;  img-src * data:; connect-src * 'unsafe-eval'">
 
 2. If you plan to run on the Android platform, you should also open the `config.xml` and add this line into the Android platform-specific section:
 
@@ -51,8 +50,9 @@ To learn more about how to customize it specifically, check out the [Cordova Whi
  Also, you can get help generating your specific header to include in the meta tag more easily using this [website](http://cspisawesome.com/). 
  
 
-#### Icons and Splash Screens
-###### General Icon Support
+## Icons and Splash Screens
+
+#### General Icon Support
 1. Copy the `icon.png` file from the final project `www` folder into your project `www` folder. This will be the general icon to be used for the app (on home screens) and is displayed 
 in PhoneGap Desktop. 
 
@@ -61,7 +61,7 @@ after the `<content>` element.
       
         <icon src="www/icon.png" />
   
-##### Bonus: Platform-Specific Icon Configuration
+### Bonus: Platform-Specific Icon Configuration
 The above is fine while testing but when you're ready to actually build and package your app for submission you'll want to know how to 
 configure all the different sizes needed specifically per platform. (This will vary depending on platform and version, use this as a general guideline
 and see the official iOS/Android/MS docs for the latest details. 
@@ -81,10 +81,10 @@ these assets will all be copied down to their respective platform locations for 
         <preference name="SplashScreen" value="screen"/>
         <preference name="SplashScreenDelay" value="3000"/>
 
-  >See the final app `config.xml` file [here](https://github.com/hollyschinsky/spotify-browser/blob/master/config.xml) to see what icons and splash screens the tool adds into the config.xml
-   and all the different sizes supported. 
+   >See the final app `config.xml` file [here](https://github.com/hollyschinsky/spotify-browser/blob/master/config.xml) to see what icons and splash screens the tool adds into the config.xml
+    and all the different sizes supported. 
 
-##### Plugin Dependencies 
+### Plugin Dependencies 
 At this point it's worth going over all of the plugins this project relies on. You can add them into your config.xml so you have them 
 when you decide to use the CLI to build locally and outside of the PhoneGap Developer app. 
 
