@@ -6,8 +6,7 @@ title: Module 3&#58; Spotify API Call and Results Handling
 ### Overview
 This is a 2-part module where you will implement the submit button handling from our main view to call the Spotify API in Part 1 and then
  create your list template to load the data into in Part 2. 
-  
-  <!--<img class="screenshot-lg" src="images/list2.png"/>-->
+    
   
 ### Part 1
 1. Open `my-app.js` and add the following code block to handle the submit button using page level events:
@@ -27,7 +26,7 @@ This is a 2-part module where you will implement the submit button handling from
                     dataType: 'json',
                     url: url,
                     success: function (resp) {
-                        myApp.alert(("Number of results " + resp.tracks.items.length);
+                        myApp.alert("Number of results " + resp.tracks.items.length);
                     },
                     error: function (xhr) {
                         console.log("Error on ajax call " + xhr);
@@ -45,6 +44,8 @@ This is a 2-part module where you will implement the submit button handling from
 ###Part 2
 1. Add the following template definition to represent our list view in `index.html` just before the `<script>` include for cordova.js:
 
+{% raw %}
+        
         <script id="listTemplate" type="text/template7">
             <div class="navbar">
                 <div class="navbar-inner">
@@ -104,6 +105,7 @@ This is a 2-part module where you will implement the submit button handling from
                 </div>
             </div>
            </script>
+   {% endraw %}
 
    >Templates are loaded into the DOM when the app initializes and bound to with data at request time. The differences between the different ways
     you can load pages using Framework7 is worth reviewing [here](http://www.idangero.us/framework7/docs/pages-ajax.html#.Vqbv91MrKjQ). 
