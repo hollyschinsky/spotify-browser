@@ -38,11 +38,11 @@ There are a couple of ways you can try it out throughout this workshop.
         
    - Navigate into the newly created project folder
 
-        $ cd spotifyApp
+          $ cd spotifyApp
 
    - Serve the app using the PhoneGap serve command
                 
-        $ phonegap serve
+          $ phonegap serve
 
    - Use the PhoneGap Developer app to connect to the ip address returned, or simply open it in your browser.  
                         
@@ -67,13 +67,11 @@ and [Ionicons](http://ionicons.com/).
         
 3. To use Framework7 icons, specify the `icon` class first followed by the name of the icon definition (from the Framework7 CSS defintion):
         
-        <!-- Using Framework7 Icons -->
         <i class="icon icon-bars"></i>
 
 4. To use the Font Awesome icons, specify the `icon` and `fa` class followed by the name of the icon you want to use. Find all the icons available
 [here](http://fortawesome.github.io/Font-Awesome/icons/). 
         
-        <!-- Using Font Awesome Icons-->
         <i class="icon fa fa-star"></i> 
 
 ### Setup Trouble?        
