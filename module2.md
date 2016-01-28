@@ -25,7 +25,7 @@ the default where all pages are loaded into.
 
 ### Steps
 
-1. Open **index.html** and give the app a dark theme by adding the F7 `layout-dark` class to the `<body>` tag:
+1. Open `index.html` and give the app a dark theme by adding the F7 `layout-dark` class to the `<body>` tag:
  
         <body class="layout-dark">
         
@@ -162,8 +162,8 @@ initialization code and `mainView` setup with the following code block, ending j
 
    >Test to ensure the slider now updates the value before moving on to the next step.  
 
-5. Go ahead and remove the rest of the code in `my-app.js` after the `deviceready` handler since we will not be using anything with the about.html
-page. The final block of code in my-app.js should look like this at the end of this step:
+5. Go ahead and remove the rest of the code in `my-app.js` after the `deviceready` handler since we will not be using anything with the `about.html`
+page. The final block of code in `my-app.js` should look like this at the end of this step:
 
         var myApp = new Framework7({
             precompileTemplates: true,

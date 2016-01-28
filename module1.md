@@ -56,7 +56,7 @@ and [Ionicons](http://ionicons.com/).
 
 1. Locate the final project you downloaded and copy the `www/lib/font-awesome` folder into your `www/lib` folder.
    
-2. Open index.html and add the reference to include the stylesheet link just before the styles.css stylesheet in the HTML header.   
+2. Open `index.html` and add the reference to include the stylesheet link just before the styles.css stylesheet in the HTML header.   
       
         <link rel="stylesheet" href="lib/font-awesome/css/font-awesome.min.css">
         
@@ -79,7 +79,7 @@ module1 starter folder into your project's root (overwrite them) and start from 
 ### Bonus Step: Run the Final Application
 Try out the final app.  
 
-1. Open the index.html of the `www/root` in a browser to get a better idea of how it works, though there will be some limits to what you can do.
+1. Open the `index.html` of the `www/root` in a browser to get a better idea of how it works, though there will be some limits to what you can do.
 1. Better yet, serve and pair with the PhoneGap Developer App from the PhoneGap CLI or PhoneGap Desktop:  
   
    - **From PhoneGap CLI** 
@@ -103,7 +103,7 @@ Try out the final app.
       
       >This option requires a mobile SDK setup. If you have Mac and Xcode you should be able to use iOS, but Android requires [additional SDK installation and setup](http://developer.android.com/sdk). 
 
-       **NOTE:** If you don't have the PhoneGap Developer App, you can still run the app in your browser by opening the index.html file in the browser, you will just have limited 
+       **NOTE:** If you don't have the PhoneGap Developer App, you can still run the app in your browser by opening the `index.html` file in the browser, you will just have limited 
        functionality.    
 
     *If you see an **EADDRINUSE** error then you ar still serving another project on the same port and need to stop it.*

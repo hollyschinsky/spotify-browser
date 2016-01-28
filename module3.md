@@ -10,7 +10,7 @@ This is a 2-part module where you will implement the submit button handling from
   <!--<img class="screenshot-lg" src="images/list2.png"/>-->
   
 ### Part 1
-1. Open **my-app.js** and add the following code block to handle the submit button using page level events:
+1. Open `my-app.js` and add the following code block to handle the submit button using page level events:
 
         $$(document).on('click', '#btnSearch', function (e) {
             var term = $$("#term").val();
