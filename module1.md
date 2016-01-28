@@ -27,19 +27,24 @@ command to create your project with your desired parameters:
 
 > You can view other template options using the `$ phonegap template list` command.
 
-### Serve the App
-First let's test out the newly created app to ensure we see the basic template before moving on. We'll use the `serve` command to start up a 
-local web server for us to try it out. 
+### Try the App
+First let's test out the newly created app to ensure we see the basic template before moving on. 
+
+There are a couple of ways you can try it out throughout this workshop. 
+
+1. Open the `www/index.html` file in your browser directly. 
+
+2. Use the PhoneGap `serve` command to serve and try it on a device via the PhoneGap Developer App
         
-2. Navigate into the newly created project folder
+   - Navigate into the newly created project folder
 
         $ cd spotifyApp
 
-3. Serve the app using the PhoneGap serve command
+   - Serve the app using the PhoneGap serve command
                 
         $ phonegap serve
 
-4. Use the PhoneGap Developer app to connect to the ip address returned, or simply open it in your browser.  
+   - Use the PhoneGap Developer app to connect to the ip address returned, or simply open it in your browser.  
                         
 5. Ensure you see the application is shown and looks like what you see below: 
 
@@ -49,7 +54,7 @@ local web server for us to try it out.
 >Use the Chrome Developer tools at any time during this workshop to help debug any issues. Open it with Alt+Cmd+I or via the View->Developer menu. 
 
 
-### Add Font Awesome Icon Library
+### Add the Font Awesome Icon Library
 
 Framework7 comes pre-defined with some basic icons but will support other icon libraries like [Font Awesome](http://fortawesome.github.io/Font-Awesome/ 
 and [Ionicons](http://ionicons.com/).
@@ -71,7 +76,6 @@ and [Ionicons](http://ionicons.com/).
         <!-- Using Font Awesome Icons-->
         <i class="icon fa fa-star"></i> 
 
-
 ### Setup Trouble?        
 If you have any problems with setting up your project based on the above, remember you can simply copy over the files located in the **[solutions](https://github.com/hollyschinsky/spotify-browser/tree/master/solutions)** 
 module1 starter folder into your project's root (overwrite them) and start from there. 
@@ -79,7 +83,7 @@ module1 starter folder into your project's root (overwrite them) and start from 
 ### Bonus Step: Run the Final Application
 Try out the final app.  
 
-1. Open the `index.html` of the `www/root` in a browser to get a better idea of how it works, though there will be some limits to what you can do.
+1. Open the `index.html` in a browser to try it out. Some features that require native plugins will not work. 
 1. Better yet, serve and pair with the PhoneGap Developer App from the PhoneGap CLI or PhoneGap Desktop:  
   
    - **From PhoneGap CLI** 

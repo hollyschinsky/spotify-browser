@@ -82,7 +82,7 @@ then add `-webkit-user-select: none; to the `.body` definition in the CSS and tr
 
 1. Serve properly sized images for all different resolutions. Resolution-independent images (SVG) are a great option and scale well.
     
-2. Use Hardware Accelerated View transitions (trick to force them to use the GPU - faster than CPU)
+2. Use Hardware Accelerated animations and view transitions (trick to force them to use the GPU - faster than CPU)
 
         .page-on-left {
             opacity: .9;

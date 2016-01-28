@@ -120,6 +120,10 @@ h2 {
     max-width: 40%;
     max-height: 40%;
 }
+.screenshot-sm {
+    max-width: 30%;
+    max-height: 30%;
+}
 .screenshot-full {
     max-width: 100%;
     max-height: 100%;

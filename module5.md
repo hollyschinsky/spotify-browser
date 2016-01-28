@@ -81,14 +81,16 @@ Open `my-app.js` and add the following basic click handlers to the end of the fi
 Now let's look at how we can use swipeout handling with Framework7. Swipeouts are a common pattern that allow a user to swipe left or 
 right to uncover further actions to take on a list item. Notice the colored buttons shown on the list items below. 
 
-   <img class="screenshot-md" src="images/play-front.png"/><img class="screenshot-md" src="images/swipe-front.png"/>
+   <img class="screenshot-lg" src="images/play-front.png"/><img class="screenshot-lg" src="images/swipe-front.png"/>
 
-   The iOS Reminders app is another good example of using swipeouts.
-   <img class="screenshot" src="images/remind2.png"/>
+   The iOS Reminders app is another good example of using swipeouts:
+   
+   <img class="screenshot-sm" src="images/remind2.png"/>
 
 
 1. Open `index.html`, locate the list template definition and take a look at the parts with `swipeout` related classes. 
    
+            {% raw %}
             <li class="swipeout">
                <div class="swipeout-content">
                    <a href='#' id='mediaItem{{@index}}' data-template='itemTemplate' data-context='{{stringify this}}'
@@ -113,11 +115,12 @@ right to uncover further actions to take on a list item. Notice the colored butt
                    <a href="#" class="bg-green preview" data-item="{{@index}}"><i class="icon fa fa-play fa-2x"></i></a>
                </div>
            </li>
+           {% endraw %}
 
 2. In the above definition we have buttons in the `swipeout-actions-right` and `swipeout-actions-left` that require some handlers to invoke code to actually do something when clicked. In this
 step we will add the handling for them. 
 
-   >The `data-item="{{@index}}"` syntax will pass the index of the item clicked on so we can then reference the right item in the code.  
+   **NOTE:** The **data-item="{{@index}}"** syntax will pass the index of the item clicked on so we can then reference the right item in the code.  
  
 3. Add a Page Init handler to use for setting up events we want to handle on the list page specifically. 
     
@@ -133,11 +136,11 @@ step we will add the handling for them.
             myApp.alert(item.name + ' added to favorites!');
         });
               
-    >Note the use of the `page.context[this.dataset.item];` As mentioned above, we passed the index of the current item clicked on the `data-item` attribute. Here 
+   >Note the use of the `page.context[this.dataset.item];` As mentioned above, we passed the index of the current item clicked on the `data-item` attribute. Here 
    we use it to retrieve that index from the page context. The page context is the array of results we received and supplied for the list template.
         
      
-5. Add Preview Handler - the left swipeout `play` button indicates the user can click it to play a preview of this item. Open`*my-app.js` and add the following into 
+5. Add Preview Handler - the left swipeout `play` button indicates the user can click it to play a preview of this item. Open`my-app.js` and add the following into 
 the list page init handler as well:
 
         $$(page.container).find('.preview').on('click', function (e) {
