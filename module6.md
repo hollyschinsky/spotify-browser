@@ -44,7 +44,7 @@ will not need to implement them in this particular app but it's important to be 
  
         -webkit-touch-callout: none
         
-  See this article:[Touch callout disabled](http://phonegap-tips.com/articles/essential-phonegap-css-webkit-touch-callout.html)
+   >See this article:[Touch callout disabled](http://phonegap-tips.com/articles/essential-phonegap-css-webkit-touch-callout.html)
 
 3. Use Native Scrolling - if the UI framework you're using doesn't have this set on the classes you're using for your containers you should
  set it. 
@@ -57,11 +57,11 @@ will not need to implement them in this particular app but it's important to be 
       
  4. Use System Fonts
  
-  -iOS - `font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;`
+  - iOS: `font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;`
  
-  -Android - `font-family: 'RobotoRegular', 'Droid Sans', sans-serif;`
+  - Android: `font-family: 'RobotoRegular', 'Droid Sans', sans-serif;`
  
-  -Windows Phone - `font-family: 'Segoe UI', Segoe, Tahoma, Geneva, sans-serif;`    
+  - Windows Phone: `font-family: 'Segoe UI', Segoe, Tahoma, Geneva, sans-serif;`    
 
 
 >All of the tips in the above list are already built into Framework7 but important to understand when building hybrid apps.   
