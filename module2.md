@@ -124,12 +124,12 @@ unless it's added.
 project.
    - Now open your `styles.css` file in the `www/css` folder and add the style definition for it.
  
-        i.icon.icon-spotify {
+        ```i.icon.icon-spotify {
              width: 29px;
              height: 29px;
              background-image: url("../img/spotify.png");
              margin-right: 3px;
-         }
+         }```
      
 
    >Refresh your browser to see the new page. Notice the controls don't actually do anything yet and if you try to drag the slider left/right it 

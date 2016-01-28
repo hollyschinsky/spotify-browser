@@ -43,7 +43,7 @@ This is a 2-part module where you will implement the submit button handling from
   <img class="screenshot-lg" src="images/numResults.png"/>
  
 ###Part 2
-1. Add the following template definition to represent our list view in index.html just before the `<script>` include for cordova.js:
+1. Add the following template definition to represent our list view in `index.html` just before the `<script>` include for cordova.js:
 
         <script id="listTemplate" type="text/template7">
             <div class="navbar">
@@ -105,8 +105,8 @@ This is a 2-part module where you will implement the submit button handling from
             </div>
            </script>
 
->Templates are loaded into the DOM when the app initializes and bound to with data at request time. The differences between the different ways
-you can load pages using Framework7 is worth reviewing [here](http://www.idangero.us/framework7/docs/pages-ajax.html#.Vqbv91MrKjQ). 
+   >Templates are loaded into the DOM when the app initializes and bound to with data at request time. The differences between the different ways
+    you can load pages using Framework7 is worth reviewing [here](http://www.idangero.us/framework7/docs/pages-ajax.html#.Vqbv91MrKjQ). 
 
 2. Open `my-app.js` again and modify the Submit button handler's `success` function to remove the alert and instead use the built-in F7 router to 
 load the new list template. We'll also set the context for it to the results of our Spotify call. The expressions in the template will be bound to
@@ -131,7 +131,7 @@ should look something like the following:
 
   <img class="screenshot" src="images/list2.png"/>
 
-4. Go ahead and delete the `about.html` page in your root **www** folder to avoid future confusion. It was part of the original F7 template 
+4. Go ahead and delete the `about.html` page in your root `www` folder to avoid future confusion. It was part of the original F7 template 
 project we created from but will not be used in the final app. 
 
 <div class="row" style="margin-top:40px;">
