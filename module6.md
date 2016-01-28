@@ -31,7 +31,7 @@ will not need to implement them in this particular app but it's important to be 
 
 1. Remove the glossy appearance from controls on iOS (gives flat design look)   
    
-   <img class="screenshot-full" src="images/glossy-appearance.png"/>
+   <img class="screenshot-full" src="images/glossy-appearance-issue.png"/>
   
    Fix it with:
       
@@ -100,15 +100,15 @@ then add `-webkit-user-select: none; to the `.body` definition in the CSS and tr
         }
 
 
-  >The [Native Transitions Plugin](http://plugins.telerik.com/cordova/plugin/native-page-transitions) is a Cordova plugin to help increase the speed of your transitions.  The plugin immediately grabs a screenshot 
-  of your webview (making a more lightweight view), then waits for the new content to load, and then performs the transition by animating out the 
-  screenshot and in the new view.
+   >The [Native Transitions Plugin](http://plugins.telerik.com/cordova/plugin/native-page-transitions) is a Cordova plugin to help increase the speed of your transitions.  The plugin immediately grabs a screenshot 
+   of your webview (making a more lightweight view), then waits for the new content to load, and then performs the transition by animating out the 
+   screenshot and in the new view.
 
-4. Lazy loading of images and virtual lists (delay loading of images while outside of viewport until user scrolls to them)
+3. Lazy loading of images and virtual lists (delay loading of images while outside of viewport until user scrolls to them)
 
     <img class="screenshot-full" src="images/lazy-load.png"/>
 
-5. HTML Caching (try to load pages from memory first) 
+4. HTML Caching (try to load pages from memory first) 
   
 
 <div class="row" style="margin-top:40px;">
