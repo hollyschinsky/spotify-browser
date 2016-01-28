@@ -151,7 +151,7 @@ the list page init handler as well:
             setTimeout(function() {media.stop()},7000) //preview for 7 seconds
         });
         
-##### Dependencies
+### Dependencies
   The preview feature above requires the Media Plugin. If you're testing with the PhoneGap Developer app on your mobile device, then it's already 
   configured for you in the sandboxed environment. If you're running locally with the CLI however, be sure to add the plugin. 
     
