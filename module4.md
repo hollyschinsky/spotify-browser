@@ -144,10 +144,10 @@ In this module you will add a template to display the details of a track selecte
    **Important:** Template helpers need to be defined before the app is initialized, so be sure to add this to the ***top*** of the `my-app.js` 
    file. 
 
-    Template7.registerHelper('stringify', function (context){
-        var str = JSON.stringify(context);
-        return str.replace(/'/g, '&#39;');
-    });
+        Template7.registerHelper('stringify', function (context){
+            var str = JSON.stringify(context);
+            return str.replace(/'/g, '&#39;');
+        });
 
 3. Open the `index.html` file and apply the `stringify` helper to the `data-context` object (`this`) being passed in:
  
