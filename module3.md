@@ -134,7 +134,7 @@ should look something like the following:
     <img class="screenshot-md" src="images/list2.PNG"/>
 
 4. Go ahead and delete the `about.html` page in your root `www` folder to avoid future confusion. It was part of the original F7 template 
-project we created from but will not be used in the final app. 
+project we created but will not be used in the final app. 
 
 <div class="row" style="margin-top:40px;">
 <div class="col-sm-12">
