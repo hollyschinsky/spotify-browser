@@ -120,7 +120,7 @@ In this module you will add a template to display the details of a track selecte
       Specify the name of the template `itemTemplate` and use &#123;&#123;this&#125;&#125; as the expression to bind to for the data, since it refers to the current 
       data item.  See [this link](http://www.idangero.us/template7/#.VqbGCVMrKjQ) for more details on other variables and syntax you can use in Template7. 
 
-        <a href='#' class="item-content item-link" data-template='itemTemplate' data-context="`{{this}}`">    
+        {% raw %}<a href='#' class="item-content item-link" data-template='itemTemplate' data-context="`{{this}}`">{% endraw %}    
   
 2. There's one more thing we need to do before this will all work properly, and that is to properly format our data using a template *helper*. 
  The data being passed in the `data-context` attribute above is currently a JavaScript object since we iterated through an Array of objects
@@ -151,7 +151,7 @@ In this module you will add a template to display the details of a track selecte
 
 3. Open the `index.html` file and apply the `stringify` helper to the `data-context` object (`this`) being passed in:
  
-        <a href="#" class="item-content item-link" data-template="itemTemplate" data-context="{{stringify this}}">
+        {% raw %}<a href="#" class="item-content item-link" data-template="itemTemplate" data-context="{{stringify this}}">{% endraw %}
         
     If you inspect the list page in the chrome dev tools you'll see the JSON data displayed as the value of the `data-context` attribute. 
             

@@ -54,9 +54,7 @@ element in it that we can replace with our menu list. Modify the existing panel 
         </div>
 
    >Notice the panel has a `reveal` effect. You could change it to `panel-cover` to try out that effect instead.
-   
-   <img class="screenshot-lg" src="images/menu-p.png"/>
-
+ 
 2. Now we need to add handling for each of these menu list items. Each of them has an id we can use to add a click event to. 
 Open `my-app.js` and add the following basic click handlers to the end of the file for each of the id's:
  
@@ -85,7 +83,7 @@ right to uncover further actions to take on a list item. Notice the colored butt
 
    The iOS Reminders app is another good example of using swipeouts:
    
-   <img class="screenshot-sm" src="images/remind2.png"/>
+   <img class="screenshot-lg-center" src="images/remind2.png"/>
 
 
 1. Open `index.html`, locate the list template definition and take a look at the parts with `swipeout` related classes. 
@@ -120,7 +118,7 @@ right to uncover further actions to take on a list item. Notice the colored butt
 2. In the above definition we have buttons in the `swipeout-actions-right` and `swipeout-actions-left` that require some handlers to invoke code to actually do something when clicked. In this
 step we will add the handling for them. 
 
-   **NOTE:** The **data-item="{{@index}}"** syntax will pass the index of the item clicked on so we can then reference the right item in the code.  
+   >The {% raw %}`data-item="{{@index}}"`{% endraw %} syntax will pass the index of the item clicked on so we can then reference the right item in the code.  
  
 3. Add a Page Init handler to use for setting up events we want to handle on the list page specifically. 
     
@@ -128,7 +126,7 @@ step we will add the handling for them.
         
         });'
         
-4. Add Favorites Handler - the `star` button indicates that the user can add this item as a favorite. Open `my-app.js` and add the following into the list page
+4. **Add Favorites Handler** - the `star` button indicates that the user can add this item as a favorite. Open `my-app.js` and add the following into the list page
  init handler created in the previous step `myApp.onPageInit('list', function (page) {...`
 
         $$(page.container).find('.favorite').on('click', function (e) {
@@ -140,7 +138,7 @@ step we will add the handling for them.
    we use it to retrieve that index from the page context. The page context is the array of results we received and supplied for the list template.
         
      
-5. Add Preview Handler - the left swipeout `play` button indicates the user can click it to play a preview of this item. Open`my-app.js` and add the following into 
+5. **Add Preview Handler** - the left swipeout `play` button indicates the user can click it to play a preview of this item. Open`my-app.js` and add the following into 
 the list page init handler as well:
 
         $$(page.container).find('.preview').on('click', function (e) {
