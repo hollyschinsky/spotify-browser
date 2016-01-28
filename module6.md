@@ -5,18 +5,19 @@ title: Module 6&#58; Making Your App Feel Native
 
 ### Overview
 In this module we're going to discuss ways to make your app feel and act native. Much of the tips included here are built into Framework7 so you
-will not need to implement them in this particular app but it's important to be aware of them in general and if you decide to use a different 
-framework or do it yourself in the future.
+will not need to implement them in this particular app but it's important to be aware of them when building hybrid apps. 
 
 ## CSS Tips for a Native Feel
 1. Remove tap highlight 
-    <img class="screenshot-lg" src="images/tap-highlight-issue.png"/>
+
+    <img class="screenshot-full" src="images/tap-highlight-issue.png"/>
         
         -webkit-tap-highlight-color: rgba(0,0,0,0);
         -webkit-tap-highlight-color: transparent;
 
 1. Disable user selections on actionable elements (for instance a select on a long tap)
-    <img class="screenshot-lg" src="images/text-select-issue.png"/>
+
+    <img class="screenshot-full" src="images/text-select-issue.png"/>
     
     Fix with:
 	    
@@ -29,7 +30,8 @@ framework or do it yourself in the future.
    >Keep `-webkit-user-select: text;` for text input fields or you won't be able to edit your text.
 
 1. Remove the glossy appearance from controls on iOS (gives flat design look)   
-   <img class="screenshot-lg" src="images/glossy-appearance.png"/>
+   
+   <img class="screenshot-full" src="images/glossy-appearance.png"/>
   
    Fix it with:
       
@@ -37,7 +39,8 @@ framework or do it yourself in the future.
              	   
       	   
 3. Disable touch callout (default callout that displays when you hold down on a link)
-   <img class="screenshot-lg" src="images/callout-issue.png"/>
+   
+   <img class="screenshot-full" src="images/callout-issue.png"/>
  
         -webkit-touch-callout: none
         
@@ -45,7 +48,8 @@ framework or do it yourself in the future.
 
 3. Use Native Scrolling - if the UI framework you're using doesn't have this set on the classes you're using for your containers you should
  set it. 
-    <img class="screenshot-lg" src="images/native-scroll-fix.png"/>
+   
+    <img class="screenshot-full" src="images/native-scroll-fix.png"/>
 
         -webkit-overflow-scrolling: touch; 
         
@@ -78,34 +82,34 @@ then add `-webkit-user-select: none; to the `.body` definition in the CSS and tr
 
 1. Serve properly sized images for all different resolutions. Resolution-independent images (SVG) are a great option and scale well.
     
-2. Use Hardware Accelerated Transitions
+2. Use Hardware Accelerated View transitions (trick to force them to use the GPU - faster than CPU)
 
-    .page-on-left {
-        opacity: .9;
-        -webkit-transform: translate3d(-20%, 0, 0);
-        transform: translate3d(-20%, 0, 0)
-    }
-
-    .page-on-center .swipeback-page-shadow {
-        opacity: 1
-    }
+        .page-on-left {
+            opacity: .9;
+            -webkit-transform: translate3d(-20%, 0, 0);
+            transform: translate3d(-20%, 0, 0)
+        }
     
-    .page-on-right {
-        -webkit-transform: translate3d(100%, 0, 0);
-        transform: translate3d(100%, 0, 0)
-    }
+        .page-on-center .swipeback-page-shadow {
+            opacity: 1
+        }
+        
+        .page-on-right {
+            -webkit-transform: translate3d(100%, 0, 0);
+            transform: translate3d(100%, 0, 0)
+        }
 
 
   >The [Native Transitions Plugin](http://plugins.telerik.com/cordova/plugin/native-page-transitions) is a Cordova plugin to help increase the speed of your transitions.  The plugin immediately grabs a screenshot 
   of your webview (making a more lightweight view), then waits for the new content to load, and then performs the transition by animating out the 
   screenshot and in the new view.
 
-4. Some other nice features Framework7 includes to help with performance:
+4. Lazy loading of images and virtual lists (delay loading of images while outside of viewport until user scrolls to them)
 
- - Lazy loading of images (notice when using search filter in list view)
- - Virtual lists
- - HTML Caching
+    <img class="screenshot-full" src="images/lazy-load.png"/>
 
+5. HTML Caching (try to load pages from memory first) 
+  
 
 <div class="row" style="margin-top:40px;">
 <div class="col-sm-12">

@@ -159,7 +159,7 @@ In this module you will add a template to display the details of a track selecte
          
 2. Now run your app and ensure you can navigate into this new detail view when a list item is clicked. 
 
-    <img class="screenshot-lg" src="images/detail2.png"/>
+    <img class="screenshot-lg" src="images/detail2.PNG"/>
  
 3. If you haven't already tried clicking on the Preview button to ensure you hear audio playing.
 
