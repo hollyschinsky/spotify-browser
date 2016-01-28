@@ -29,9 +29,9 @@ whitelist approved sites amongst other things. To use it you need to ensure you 
 added to your project (already included in the base template by default) and add a meta tag to your index.html that declares the specific policy
  you want to apply for your app. 
    
-  Open the `index.html` file and add the following Content Security Policy meta tag. This will allow the access required for this particcular app. 
+1. Open the `index.html` file and add the following Content Security Policy meta tag. This will allow the access required for this particcular app. 
      
-     <meta http-equiv="Content-Security-Policy" content="default-src 'self' data: gap: https://ssl.gstatic.com 'unsafe-eval'; script-src * 'unsafe-eval'; style-src 'self'; media-src *; frame-src *;  img-src * data:; connect-src * 'unsafe-eval'">
+        <meta http-equiv="Content-Security-Policy" content="default-src 'self' data: gap: https://ssl.gstatic.com 'unsafe-eval'; script-src * 'unsafe-eval'; style-src 'self'; media-src *; frame-src *;  img-src * data:; connect-src * 'unsafe-eval'">
 
 2. If you plan to run on the Android platform, you should also open the `config.xml` and add this line into the Android platform-specific section:
 
@@ -66,7 +66,7 @@ The above is fine while testing but when you're ready to actually build and pack
 configure all the different sizes needed specifically per platform. (This will vary depending on platform and version, use this as a general guideline
 and see the official iOS/Android/MS docs for the latest details. 
 
-The Ionic Framework has a great tool for making this process easy using their icon sizing service. You need to provide an image for an icon
+The Ionic Framework has a great service called [Ionic Resources](http://blog.ionic.io/automating-icons-and-splash-screens/) to make this process easy. You need to provide an image for an icon
 with a size of 192x192 and another for the splash screen with a size of 2208x2208. Ionic provides Photoshop templates you can use as well.
 See [this post](http://blog.ionic.io/automating-icons-and-splash-screens/) for more details on using their tool.
  
