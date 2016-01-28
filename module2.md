@@ -189,7 +189,7 @@ page. The final block of code in `my-app.js` should look like this at the end of
 
 6. Ensure you see the application is shown and looks like what you see below:
 
- <img class="screenshot-md" src="images/main2.png"/>        
+     <img class="screenshot-lg-center" src="images/main2.png"/>        
 
 <div class="row" style="margin-top:40px;">
 <div class="col-sm-12">
