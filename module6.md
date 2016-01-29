@@ -63,6 +63,7 @@ will not need to implement them in this particular app but it's important to be 
  
   - Windows Phone: `font-family: 'Segoe UI', Segoe, Tahoma, Geneva, sans-serif;`    
 
+5. Ensure you're using FastClick or something similar to handle tap delay on mobile. 
 
 >All of the tips in the above list are already built into Framework7 but important to understand when building hybrid apps.   
 
@@ -104,12 +105,13 @@ then add `-webkit-user-select: none; to the `.body` definition in the CSS and tr
    of your webview (making a more lightweight view), then waits for the new content to load, and then performs the transition by animating out the 
    screenshot and in the new view.
 
-3. Lazy loading of images and virtual lists (delay loading of images while outside of viewport until user scrolls to them)
+3. Lazy load images and virtual lists (delay loading of images while outside of viewport until user scrolls to them)
 
     <img class="screenshot-full" src="images/lazy-load.png"/>
 
 4. HTML Caching (try to load pages from memory first) 
   
+5. Add the plugin to use the super fast WKWebView on iOS - [guide here](http://devgirl.org/2016/01/11/a-faster-hybrid-app-for-the-new-year/)
 
 <div class="row" style="margin-top:40px;">
 <div class="col-sm-12">
