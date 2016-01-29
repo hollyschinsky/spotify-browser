@@ -4,7 +4,6 @@ title: Module 9&#58; Next Steps
 ---
 
 ### Next Steps
-
 Now that you've got a basic app up and running you may be looking for additional information on where to proceed. 
   
 ### Testing, Profiling
@@ -16,17 +15,10 @@ links to tools and resources that can help you further:
   - [Remote Debugging on Android](http://geeklearning.io/apache-cordova-and-remote-debugging-on-android/)
   - [Debugging with Safari Web Inspector](http://phonegap-tips.com/articles/debugging-ios-phonegap-apps-with-safaris-web-inspector.html)
 
-### Push Notification Support
-Push notifications are a common requirement when developing mobile apps. See the links below for help implementing them in your PhoneGap apps.
-  
-- [Simon's Workshop Link]() 
-  
-### Plugin Development  
-There are a vast number of plugins currently available for Cordova but you still may find yourself needing a specific native feature that is not already
-  supported. Learn how to write your own plugin below.
-  
-- [Jesse's Workshop Link]()
+### Securing your App 
+- [Slide Preso by Tommy Williams from PhoneGap Day US 2016](http://devgeeks.github.io/pixfor-vulnerable/assets/player/KeynoteDHTMLPlayer.html)
 
+ 
 ### Adding Analytics
 Analytics can be used to determine how your app is being used, which features are popular and where your pain points are.  
     
@@ -52,6 +44,17 @@ Below are some plugins for services supporting PhoneGap apps:
   
 - [Optimizely Cordova Plugin](https://github.com/optimizely/optimizely-cordova-plugin)
 - [Leanplum Cordova Plugin](https://github.com/Telerik-Verified-Plugins/Leanplum/blob/master/doc/index.md)
+
+### Push Notification Support
+Push notifications are a common requirement when developing mobile apps. See the links below for help implementing them in your PhoneGap apps.
+  
+- [Coming Soon... Simon's PG Day 2016 workshop video]() 
+  
+### Plugin Development  
+There are a vast number of plugins currently available for Cordova but you still may find yourself needing a specific native feature that is not already
+  supported. Learn how to write your own plugin below.
+  
+- [Coming Soon... Jesse's PG Day 2016 Workshop video]()
     
 <div class="row" style="margin-top:40px;">
 <div class="col-sm-12">
