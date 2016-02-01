@@ -1,6 +1,6 @@
 ---
 layout: module
-title: Module 9&#58; Next Steps
+title: Module 10&#58; Next Steps
 ---
 
 ### Next Steps
@@ -16,7 +16,7 @@ links to tools and resources that can help you further:
   - [Debugging with Safari Web Inspector](http://phonegap-tips.com/articles/debugging-ios-phonegap-apps-with-safaris-web-inspector.html)
 
 ### Securing your App 
-- [Slide Preso by Tommy Williams from PhoneGap Day US 2016](http://devgeeks.github.io/pixfor-vulnerable/assets/player/KeynoteDHTMLPlayer.html)
+- [Tommy Williams PhoneGap Day 2016 Workshop](http://devgeeks.github.io/pixfor-vulnerable/assets/player/KeynoteDHTMLPlayer.html)
 
  
 ### Adding Analytics
@@ -33,7 +33,7 @@ Update your apps in the iOS App Store quickly without waiting on long approval p
 
 - [Code Push Plugin (using MS CodePush Service)](https://www.npmjs.com/package/cordova-plugin-code-push)
 - [Hot Code Cordova Push Plugin](https://www.npmjs.com/package/cordova-plugin-code-push) and [associated CLI](https://www.npmjs.com/package/cordova-hot-code-push-cli)     
-- Learn how [exFM](http://phonegap.com/blog/2013/04/23/story-behind-exfm/) did it. (read the section titled *Loading Assets*).        
+- [Learn how exFM did it](http://phonegap.com/blog/2013/04/23/story-behind-exfm/) (read the section titled *Loading Assets*).        
 - [Ionic Deploy](http://docs.ionic.io/docs/deploy-from-scratch) service
   
 ### A/B Testing
@@ -48,13 +48,13 @@ Below are some plugins for services supporting PhoneGap apps:
 ### Push Notification Support
 Push notifications are a common requirement when developing mobile apps. See the links below for help implementing them in your PhoneGap apps.
   
-- [Coming Soon... Simon's PG Day 2016 workshop video]() 
+- [Simon's MacDonald's PhoneGap Day Push Notification Workshop](http://macdonst.github.io/push-workshop/) 
   
 ### Plugin Development  
 There are a vast number of plugins currently available for Cordova but you still may find yourself needing a specific native feature that is not already
   supported. Learn how to write your own plugin below.
   
-- [Coming Soon... Jesse's PG Day 2016 Workshop video]()
+- [Jesse MacFadyen's PhoneGap Day 2016 Slides](http://purplecabbage.github.io/slides/pgd16Plugins/index.html)
     
 <div class="row" style="margin-top:40px;">
 <div class="col-sm-12">

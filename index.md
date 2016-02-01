@@ -8,6 +8,10 @@ In this workshop you will learn how to create a mobile app that interacts with t
 using PhoneGap. Some best practices and performance techniques will be taught along the way and you will be introduced to useful plugins to 
 add additional functionality that will enhance the app and provide a more native experience. 
 
+The sample app project is located on my associated
+GitHub repo [here](https://github.com/hollyschinsky/spotify-browser). The slides that I used in the workshop at PhoneGap Day US can be found 
+[here](http://devgirl.org/files/pgday/www/#0).    
+
 <img class="screenshot" src="images/main.png"/>
 <img class="screenshot" src="images/list.png"/>
 <img class="screenshot" src="images/detail.png"/>
