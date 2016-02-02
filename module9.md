@@ -24,17 +24,19 @@ If you're using the PhoneGap CLI in particular, ensure to install [ios-sim](http
 2. Enable Web Inspector on the device: 
     - Open **Settings**, click on **Safari**, then **Advanced** from your device and turn on the Web Inspector toggle as shown below:
 
- <img class="screenshot-lg" src="images/ios-web-insp.png"/>
+   <img class="screenshot-lg-center" src="images/ios-web-insp.png"/>
 
 3. Enable the Safari Developer Menu on your computer
     - Open Safari and select **Preferences** from the Safari toolbar drop-down
     - Check the box next to **Show Develop menu in menu bar** at the bottom of the screen  as shown below:
 
-   <img class="screenshot-lg" src="images/safari-dev-menu.png"/>
+    <img class="screenshot-lg" src="images/safari-dev-menu.png"/>
 
 4. Run the mobile PhoneGap application you want to debug on your device or simulator from  the CLI 
-		$ phonegap run ios  
-		$ phone gap run ios --emulator
+		    
+		 $ phonegap run ios  
+		 $ phonegap run ios --emulator
+		
 5. Open the newly enabled **Develop** menu in Safari and locate the name of your connected device in the drop down:
 
   <img class="screenshot-lg" src="images/safari-develop.png"/>
@@ -58,18 +60,19 @@ You can remotely debug your Android applications running on your device in a sim
 1. Connect your Android Device to your computer via USB
 2. Enable Developer mode on your device - from your Android device, open up Settings and scroll down to **About phone**, scroll down to the **Build number** and tap on it 7 times:
 
- <img class="screenshot-lg" src="images/build-number.png"/>
+  <img class="screenshot-lg-center" src="images/build-number.png"/>
 
 3. Go back to the previous Settings screen and locate the new developer options item: 
 
- <img class="screenshot-lg" src="images/android-dev-options.png"/>
+  <img class="screenshot-lg-center" src="images/android-dev-options.png"/>
     
 4. Tap into it and turn on USB Debugging (and any other settings you may need):
 
- <img class="screenshot-lg" src="images/usb-debug.png"/>
+  <img class="screenshot-lg-center" src="images/usb-debug.png"/>
  
 5. Run the mobile PhoneGap application you want to debug on the device from the CLI 
-    		$ phonegap run android
+    		
+    	$ phonegap run android
  
 6. Open Chrome on your computer and type `chrome://inspect/` for the URL location
 7. From the **Devices** menu option on the left you should see your device with a list of web applications running on it including WebView applications. Locate your app in the list.
@@ -78,7 +81,7 @@ You can remotely debug your Android applications running on your device in a sim
 
 8. Click *inspect* and start debugging your application directly on your device using the Chrome DevTools.  
  
- <img class="screenshot-lg" src="images/chrome-devtools.png"/>
+  <img class="screenshot-lg" src="images/chrome-devtools.png"/>
     
 >Check out the [Chrome DevTools Official Documentation](https://developer.chrome.com/devtools/docs/remote-debugging) for details about what you can do with the tools.</div>
 
