@@ -75,9 +75,10 @@ You can remotely debug your Android applications running on your device in a sim
     	$ phonegap run android
  
 6. Open Chrome on your computer and type `chrome://inspect/` for the URL location
+
 7. From the **Devices** menu option on the left you should see your device with a list of web applications running on it including WebView applications. Locate your app in the list.
 
- <img class="screenshot-lg" src="images/chrome-inspect.png"/>
+  <img class="screenshot-lg" src="images/chrome-inspect.png"/>
 
 8. Click *inspect* and start debugging your application directly on your device using the Chrome DevTools.  
  
