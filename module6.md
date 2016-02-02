@@ -68,8 +68,12 @@ will not need to implement them in this particular app but it's important to be 
 >All of the tips in the above list are already built into Framework7 but important to understand when building hybrid apps.   
 
 #### Optional
-If you're running an app through the CLI on a native simulator or device (outside of PhoneGap Developer), you can test this out with Safari 
-developer tools. Open up to inspect and modify some of the CSS properties applied from the Framework7 CSS.
+If you're running an app through the CLI on a native simulator or device (outside of PhoneGap Developer), you can test out some of these CSS tricks
+ using the Safari Developer tools while remote debugging on your iOS device or the Chrome Developer tools remote debugging your Android device. 
+ 
+>See [module 9](http://hollyschinsky.github.io/spotify-browser/module9.html) for remote debugging details 
+ 
+Open up to inspect and modify some of the CSS properties applied from the Framework7 CSS.
  
 1. Change tap highlight to a color instead of transparent, such as `-webkit-tap-highlight-color: green;`. Then try clicking on one of the external links at the bottom of the main screen.
 2. Comment out `-webkit-touch-callout: none;` or change it to another value. Then hold down (long tap) on a link.
