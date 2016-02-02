@@ -3,8 +3,9 @@ layout: module
 title: Module 10&#58; Next Steps
 ---
 
-### Next Steps
-Now that you've got a basic app up and running you may be looking for additional information on where to proceed. 
+## Next Steps
+Now that you've got a basic app up and running you may be looking for additional information on where to proceed. This module is meant to share
+some useful resources for taking your app development process to the next level. 
   
 ### Testing, Profiling
 You'll want to find tools for helping you test and debug your apps. You should also look at using a tool to measure performance metrics. Here are some
