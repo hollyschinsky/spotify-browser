@@ -70,10 +70,7 @@ You can remotely debug your Android applications running on your device in a sim
 
    <img class="screenshot-lg-center" src="images/usb-debug.png"/>
  
-5. Run the mobile PhoneGap application you want to debug on the device from the CLI 
-    		
-    	$ phonegap run android
-    	
+5. Run the mobile PhoneGap application you want to debug on the device from the CLI using `$ phonegap run android`         	
 
 6. Open Chrome on your computer and type `chrome://inspect/` for the URL location
 
@@ -83,7 +80,7 @@ You can remotely debug your Android applications running on your device in a sim
 
 8. Click *inspect* and start debugging your application directly on your device using the Chrome DevTools.  
  
-  <img class="screenshot-lg" src="images/chrome-devtools.png"/>
+   <img class="screenshot-lg" src="images/chrome-devtools.png"/>
     
 >Check out the [Chrome DevTools Official Documentation](https://developer.chrome.com/devtools/docs/remote-debugging) for details about what you can do with the tools.</div>
 
