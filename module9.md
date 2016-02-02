@@ -23,19 +23,25 @@ If you're using the PhoneGap CLI in particular, ensure to install [ios-sim](http
 1. Connect your iOS Device to your computer via USB
 2. Enable Web Inspector on the device: 
     - Open **Settings**, click on **Safari**, then **Advanced** from your device and turn on the Web Inspector toggle as shown below:
-![](images/ios-web-insp.png)
+
+ <img class="screenshot-lg" src="images/ios-web-insp.png"/>
 
 3. Enable the Safari Developer Menu on your computer
     - Open Safari and select **Preferences** from the Safari toolbar drop-down
     - Check the box next to **Show Develop menu in menu bar** at the bottom of the screen  as shown below:
-![](images/safari-dev-menu.png)
+
+   <img class="screenshot-lg" src="images/safari-dev-menu.png"/>
+
 4. Run the mobile PhoneGap application you want to debug on your device or simulator from  the CLI 
 		$ phonegap run ios  
 		$ phone gap run ios --emulator
 5. Open the newly enabled **Develop** menu in Safari and locate the name of your connected device in the drop down:
-![](images/safari-develop.png)
+
+  <img class="screenshot-lg" src="images/safari-develop.png"/>
+  
 6. Select it and start debugging your app directly on the device using the Safari Web Inspector tools.
-![](images/safari-web-insp.png)
+
+  <img class="screenshot-lg" src="images/safari-web-insp.png"/>
 
 <div class="alert--info">Check out the [Safari Web Inspector Official Documentation](https://developer.apple.com/library/safari/documentation/AppleApplications/Conceptual/Safari_Developer_Guide/Introduction/Introduction.html) for details about what you can do with the tools.</div>
 
