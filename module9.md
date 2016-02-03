@@ -39,7 +39,7 @@ If you're using the PhoneGap CLI in particular, ensure to install [ios-sim](http
 		
 5. Open the newly enabled **Develop** menu in Safari and locate the name of your connected device in the drop down:
 
-  <img class="screenshot-lg" src="images/safari-develop.png"/>
+    <img class="screenshot-lg" src="images/safari-develop.png"/>
   
 6. Select it and start debugging your app directly on the device using the Safari Web Inspector tools.
 
@@ -49,7 +49,7 @@ If you're using the PhoneGap CLI in particular, ensure to install [ios-sim](http
 
 ### Android Device Debugging via Chrome 
 
-You can remotely debug your Android applications running on your device in a similar way to iOS apps running in Safari with Android apps running in Chrome. Follow the steps to get started.
+You can remotely debug your Android applications running on your device in a similar way to the above using Chrome. Follow the steps below to get started.
 
 #### Requirements
 - USB Cable
@@ -58,13 +58,14 @@ You can remotely debug your Android applications running on your device in a sim
 
 #### Steps
 1. Connect your Android Device to your computer via USB
+
 2. Enable Developer mode on your device - from your Android device, open up Settings and scroll down to **About phone**, scroll down to the **Build number** and tap on it 7 times:
 
-  <img class="screenshot-lg-center" src="images/build-number.png"/>
+   <img class="screenshot-lg-center" src="images/build-number.png"/>
 
 3. Go back to the previous Settings screen and locate the new developer options item: 
 
-  <img class="screenshot-lg-center" src="images/android-dev-options.png"/>
+   <img class="screenshot-lg-center" src="images/android-dev-options.png"/>
     
 4. Tap into it and turn on USB Debugging (and any other settings you may need):
 
@@ -86,7 +87,9 @@ You can remotely debug your Android applications running on your device in a sim
 
  
 ### Debugging Apps Running in PhoneGap Developer App
-> Check out this [detailed guide in our PhoneGap Docs]( http://docs.phonegap.com/references/developer-app/debugging/) of how to debug your apps using Weinre
+Currently you can use the Weinre remote inspection tool for debugging your apps running on the PhoneGap Developer App on your device. A guide on
+how to use this can be found [here in our PhoneGap Docs](http://docs.phonegap.com/references/developer-app/debugging/. 
+
 
 ### Additional Debugging Resources:
 - [GapDebug](https://www.genuitec.com/products/gapdebug/)

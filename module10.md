@@ -56,6 +56,19 @@ There are a vast number of plugins currently available for Cordova but you still
   supported. Learn how to write your own plugin below.
   
 - [Jesse MacFadyen's PhoneGap Day 2016 Slides](http://purplecabbage.github.io/slides/pgd16Plugins/index.html)
+
+### Developer Guides 
++ [Managing Click Delay]()
++ [Plugin Architecture]()
++ [Single Page Architecture]()
+
+#### Performance Tips
++ [Using CSS Sprite Sheets](guides/perf-tip-css-sprite-sheets.html)
++ [Hardware Acceleration]()
++ [Paint Before Animate]()
++ [Scrolling Tips]()
++ [Minimize Reflows]()
++ [Serve Images at Resolution](guides/perf-tip-serve-images-at-resolution.html)
     
 <div class="row" style="margin-top:40px;">
 <div class="col-sm-12">
