@@ -20,7 +20,7 @@ The drag and drop workflow updates in this release make it even easier to add yo
 
 ![Drag Drop Project Workflow](drag-drop-project.gif)
 
-- ### Default Icon Handling
+- __Default Icon Handling__
 The default icon handling has undergone a big improvement as well. If your project does not contain one by default, we'll display a CSS placeholder using initials based on the app name as shown below. 
 
 ![Default Icons](default-icons.png)
