@@ -1,6 +1,7 @@
 ---
+layout: module
 author: PhoneGap Desktop Team
-title: "PhoneGap Desktop App 0.4.0"
+title: "PhoneGap Desktop App 0.4.0 Released"
 tags:
 - PhoneGap Blog
 - Release
